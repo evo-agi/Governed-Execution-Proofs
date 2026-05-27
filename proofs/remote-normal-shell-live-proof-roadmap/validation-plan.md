@@ -22,6 +22,19 @@ Temporal server commands were run for this roadmap status note.
 
 Milestone 3 and live proof claims remain unvalidated.
 
+## Live validation planning record
+
+Date: 2026-05-27.
+
+Status: plan recorded, live proof not run.
+
+The Linux/Remote Alpha live validation plan is recorded in
+`.docs/remote-normal-shell-live-validation-plan.md`.
+
+Linux-host validation is deferred until explicit authorization. This roadmap
+remains future-facing. Generated live evidence will require post-run audit
+before proof claims are updated.
+
 ## Tier 1: static roadmap review
 
 Purpose: confirm that the proof package shape is clear before any live
