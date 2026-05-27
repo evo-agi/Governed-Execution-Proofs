@@ -13,6 +13,8 @@ Primary static anchors:
 - `Execution Substrate: .docs/system_overview/boundaries.md:82-120`
 - `Infrastructure Manager: .docs/remote-supported-host-support-bundle.md:699-760`
 - `Governed Execution Proofs: .docs/proof-module-conventions.md:40-76`
+- `Governed Execution Proofs: .docs/parallel-proof-execution-policy.md`
+- `Governed Execution Proofs: .docs/proof0-concurrency-2026-05-27.md`
 
 ## Harness-isolation anchors
 
@@ -66,11 +68,12 @@ Control Plane manual-smoke and validation-driver anchors:
   behavior, subprocess env propagation, fail-fast ambiguity guards, and
   generated runtime-config contents.
 
-0C Codex-reported evidence interpretation:
+0B and 0C Codex-reported evidence interpretation:
 
-- The operator-supplied 0C report is treated as Codex-reported bounded live
-  evidence only. It supports an audit conclusion that the corrected
-  generated-config/no-profile A/B shape was reported passed.
+- The Proof 0 2026-05-27 ledger is treated as Codex-reported bounded evidence
+  only. It supports an audit conclusion that 0B plan-only A/B lease records
+  were reported passed and that the corrected generated-config/no-profile 0C
+  A/B shape was reported passed.
 - The initial failed A/B shape is treated as evidence of CP harness
   config/profile ambiguity, not as a product runtime failure.
 - No raw generated artifacts, profiles, logs, traces, run ids, provider ids,
@@ -96,8 +99,9 @@ ES static run-scoping anchors for later review:
 
 ## Evidence quality notes
 
-The anchors above support only static planning and source-level inspection. They
-do not prove that a live or no-network two-run validation has occurred.
+The source anchors above support static planning and source-level inspection.
+The Proof 0 ledger records bounded Codex-reported 0B and 0C status, not
+independent inspection. The static example summary remains `not_run`.
 
 Generated harness plans, summaries, reports, traces, profile copies, retained
 bundles, support bundles, and validation outputs are evidence/projection or
@@ -106,7 +110,9 @@ authority, or IM provisioning authority.
 
 ## Claims not supported
 
-This evidence map does not support live Temporal behavior, supported-local
-behavior, Remote Alpha behavior, Linux-host behavior, Docker, Nomad, Vault,
-SPIRE, fake-model server behavior, production readiness, high availability,
-multi-tenancy, public/demo readiness, or independent audit.
+This evidence map does not support live Temporal behavior beyond the bounded
+Codex-reported 0C path, supported-local behavior beyond that path, Remote Alpha
+behavior beyond that path, Linux-host behavior, Docker, Nomad, Vault, SPIRE,
+fake-model service behavior, production readiness, high availability,
+multi-tenancy, public/demo readiness, independent audit, or unbounded parallel
+proof coverage.

@@ -4,26 +4,27 @@
 
 Static example status: `not_run`.
 
-This module was added without running live proofs, supported-local commands,
-Remote Alpha commands, Linux-host commands, CP/ES/IM live validation commands,
-Temporal services, fake model servers, Docker, Nomad, Vault, SPIRE, or product
-services.
+This authored module was added without running live proofs, supported-local
+commands, Remote Alpha commands, Linux-host commands, CP/ES/IM live validation
+commands, Temporal services, fake model servers, Docker, Nomad, Vault, SPIRE,
+or product services.
 
-Later operator-supplied context reports that a bounded 0C live two-run Remote
-Alpha `temporal-basic` proof was attempted and then completed under a corrected
-invocation shape. This plan records that only as Codex-reported evidence
-interpretation:
+The later bounded status is recorded in
+`.docs/proof0-concurrency-2026-05-27.md`:
 
-- the initial config-plus-profile A/B invocation failed before workflow startup
-  because the nested live smoke reapplied the profile Temporal target over the
-  generated isolated config;
-- the corrected A/B invocation used the generated Remote Alpha runtime config
-  as `--config`, omitted the profile argument, and was reported passed;
+- 0B is Codex-reported passed as no-network, plan-only harness-isolation
+  evidence;
+- 0C is Codex-reported passed for two overlapping live Remote Alpha
+  `temporal-basic` runs under the hardened generated-config/no-profile
+  invocation;
+- the initial config-plus-profile A/B invocation failed before workflow
+  startup because profile reapplication could override isolation-critical
+  Temporal fields after generated config materialized the lease;
 - no raw generated artifacts, logs, traces, reports, profiles, run ids,
   provider ids, local paths, or sensitive payloads are imported into this
   module;
-- the report is not independent inspection and does not establish general
-  concurrency support.
+- the 0B/0C record is not independent inspection and does not establish general
+  parallel proof coverage.
 
 ## Tier 0A: commit-only static package
 
@@ -44,12 +45,20 @@ Fail interpretation:
 - Static docs import generated payloads.
 - Static docs turn harness outputs into CP, ES, or IM authority.
 
-## Tier 0B: future local no-network harness-isolation validation
+## Tier 0B: Codex-reported local no-network harness-isolation validation
 
-Purpose: later, with explicit authorization, run a deterministic no-network
-check that two planned harness configurations do not share run id, output root,
-report root/index, SQLite DB path, Temporal target/namespace/queues/DB path/UI
-port, fake-model URL, attempt paths, or finalization paths.
+Purpose: record a deterministic no-network plan-only check that two planned
+harness configurations do not share run id, output root, report root/index,
+SQLite DB path, Temporal target/namespace/queues/DB path/UI port, fake-model
+URL, attempt paths, or finalization paths.
+
+Codex-reported status:
+
+- two contact-free A/B plan summaries were reported;
+- live actions were excluded;
+- generated artifacts and generated runtime configs were classified as
+  proof-local redaction-needed evidence/projection/diagnostics;
+- no host contact or service startup is claimed.
 
 Required controls before 0B:
 
@@ -62,10 +71,21 @@ Required controls before 0B:
   operator-owned inputs;
 - generated plan or validation output treated as evidence-only.
 
-## Tier 0C: future live two-run Remote Alpha temporal-basic validation
+## Tier 0C: Codex-reported live two-run Remote Alpha temporal-basic validation
 
-Purpose: later, with explicit authorization, run two live Remote Alpha
-`temporal-basic` validations using isolated harness configuration.
+Purpose: record the bounded CP to ES Remote Alpha `temporal-basic` class under
+isolated harness configuration.
+
+Codex-reported status:
+
+- initial config+profile A/B invocation failed before workflow startup and is
+  classified as a harness hazard;
+- corrected/hardened A/B invocation passed with generated runtime config as
+  live `--config` and no supported-local profile re-forwarding;
+- both reported runs exited 0 and recorded distinct CP run ids, output roots,
+  Temporal settings, fake-model/provider URLs, ES provider ids, retained refs,
+  finalization refs, and materialization refs;
+- 0C confirmed the CP to ES `temporal-basic` class only.
 
 Required controls before 0C:
 
@@ -77,13 +97,20 @@ Required controls before 0C:
 - no IM support-bundle ingestion in Proof 0 core;
 - generated artifacts and validation outputs kept as evidence/projection only.
 
+Other proof classes require a separate Proof 0 continuation before parallel live
+execution.
+
 ## Claims not supported
 
-This validation plan does not prove 0B or 0C. It does not prove live Temporal,
-supported-local, Remote Alpha, Linux-host, Docker, Nomad, Vault, SPIRE,
+This validation plan does not prove live Temporal behavior beyond the bounded
+Codex-reported 0C path, supported-local behavior beyond that path, Remote Alpha
+behavior beyond that path, Linux-host behavior, Docker, Nomad, Vault, SPIRE,
 fake-model service behavior, ES runtime success, provider success, production
-readiness, high availability, multi-tenancy, public/demo readiness, or
-independent audit.
+readiness, high availability, multi-tenancy, public/demo readiness,
+independent audit, default shared-config safety, all interleavings, direct ES
+proof parallelism, runtime identity/Vault proof parallelism, cancel/failure
+proof parallelism, IM support-bundle proof parallelism, IM live-refresh
+parallelism, or destructive/recovery proof parallelism.
 
 ## Generated artifacts
 

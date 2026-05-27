@@ -8,7 +8,7 @@ id_classification: "synthetic_example"
 validation_status: "not_run"
 validation_evidence: []
 
-scenario_name: "Proof 0 Concurrency Harness Isolation"
+scenario_name: "Proof 0 Parallel Proof Harness Isolation"
 proof_number: "0"
 proof_tracks:
   - "0A commit only"
@@ -69,22 +69,25 @@ isolation_surfaces:
 
 claims_supported:
   - "Proof 0 static module exists"
-  - "harness-owned isolation surfaces are explicitly identified"
+  - "generic parallel-proof isolation policy is documented"
+  - "harness-owned lease surfaces are explicitly identified"
   - "Control Plane, Execution Substrate, and Infrastructure Manager authority boundaries are labeled"
   - "generated artifacts and validation outputs remain evidence/projection/diagnostics only"
 
 claims_not_supported:
-  - "Proof 0 passed"
-  - "0B local no-network validation ran"
-  - "0C live two-run Remote Alpha validation ran"
-  - "live Temporal behavior"
-  - "supported-local behavior"
-  - "Remote Alpha behavior"
+  - "this static example is validation output"
+  - "Proof 0 independently inspected passed"
+  - "live Temporal behavior beyond bounded Codex-reported 0C ledger scope"
+  - "supported-local behavior beyond bounded Codex-reported 0C ledger scope"
+  - "Remote Alpha behavior beyond bounded Codex-reported 0C ledger scope"
   - "Linux-host behavior"
   - "Docker/Nomad/Vault/SPIRE behavior"
   - "fake-model service behavior"
   - "ES runtime success"
   - "provider success"
+  - "general parallel proof coverage"
+  - "default shared-config safety"
+  - "all interleavings"
   - "production readiness"
   - "high availability"
   - "multi-tenancy"

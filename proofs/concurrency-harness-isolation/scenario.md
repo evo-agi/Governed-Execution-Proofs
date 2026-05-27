@@ -4,15 +4,30 @@
 
 Static example status: `not_run`.
 
-This module describes Proof 0 concurrency and harness-isolation groundwork. It
-does not record a local no-network run, a live Temporal run, a supported-local
-run, a Remote Alpha run, or Linux-host contact.
+This module describes Proof 0 as a generic parallel-proof execution and
+harness-isolation policy. The static example remains `not_run`; bounded
+Codex-reported 0B and 0C status is recorded separately in
+`.docs/proof0-concurrency-2026-05-27.md`.
+
+This module does not import generated proof output and does not record
+Linux-host contact.
 
 ## Scenario shape
 
-Proof 0 prepares the proof track so a later authorized validation can run either
-two local no-network harness-isolation configurations or two live Remote Alpha
-`temporal-basic` validations without sharing harness-owned state.
+Proof 0 prepares the proof track for future parallel proof execution, not only
+for the next proof. It defines the proof isolation lease that a parent
+coordinator must allocate before parallel live proof writers may run.
+
+Read-only planning, inspection, docs, proof-package updates, and post-run audits
+may use subagents freely because they do not compete for live runtime
+resources. Live proof subagents may run in parallel only when the parent
+allocates explicit isolation leases and the proof class has either been
+confirmed or is being deliberately tested as a Proof 0 continuation.
+
+Codex-reported 0B covered two no-network plan-only harness-isolation
+configurations. Codex-reported 0C covered only two overlapping live Remote
+Alpha `temporal-basic` validations under the hardened generated-config/no-profile
+invocation shape.
 
 The intended isolation surfaces are:
 
@@ -26,6 +41,11 @@ The intended isolation surfaces are:
 - fake-model provider URL;
 - attempt-manifest and finalization artifact paths.
 
+Other proof classes, including direct ES proofs, runtime identity/Vault proofs,
+cancel/failure proofs, IM support-bundle proofs, IM live-refresh proofs, and
+destructive/recovery proofs, require a separate Proof 0 continuation before
+parallel live execution.
+
 ## Authority boundaries
 
 Control Plane owns workflow/run-control state, Temporal shell state, review,
@@ -36,6 +56,8 @@ retained opaque results, and runtime handoff boundaries.
 
 Infrastructure Manager owns readiness, profile, provenance, diagnostics, and
 support evidence. IM support-bundle generation is outside Proof 0 core.
+Support-bundle generation should snapshot completed evidence and should not run
+concurrently with live proof writers unless that class is separately proved.
 
 Generated artifacts, `.out`, reports, traces, logs, support bundles, retained
 bundles, profiles, local proof outputs, and validation outputs remain
