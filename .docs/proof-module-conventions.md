@@ -13,6 +13,20 @@ own scenario, claims, evidence, example summary, validation plan, and public
 writing posture. Module content may cite adjacent authored docs, source, and
 tests, but it must not import generated payloads into the repo.
 
+## Proof 0 module
+
+`proofs/concurrency-harness-isolation/` is the static Proof 0 module for
+concurrency and harness-isolation groundwork. Its static example remains
+`validation_status: "not_run"` until a later authorized validation records its
+own provenance. The module may record a later Codex-reported 0C audit
+interpretation in authored validation-plan/evidence docs without importing raw
+generated artifacts, but that record must remain clearly non-independent and
+bounded to the reported invocation shape. It may identify Control Plane harness
+isolation knobs and CP/ES/IM authority boundaries, but it must not claim local
+no-network validation, general live Temporal validation, general
+supported-local validation, general Remote Alpha validation, Linux-host
+behavior, or production readiness.
+
 ## Proof module layout
 
 A module may contain:
