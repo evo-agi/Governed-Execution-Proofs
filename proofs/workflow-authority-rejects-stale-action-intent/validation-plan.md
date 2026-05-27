@@ -2,11 +2,55 @@
 
 ## Current status
 
-Status: `not_run`.
+Static example status: `not_run`.
 
 This module is static proof-planning material. It was created without running
 tests, scripts, servers, bringup commands, proof commands, validation commands,
 Docker, Nomad, Vault, SPIRE, Temporal, or supported-local commands.
+
+The static example remains `not_run`. The deterministic record below captures
+Codex-reported deterministic validation separately from the static example and
+is not live proof output.
+
+## Deterministic validation record (2026-05-27)
+
+Type: Codex-reported deterministic validation.
+
+Reference ledger: `.docs/deterministic-validation-2026-05-27.md`.
+
+Reported commands:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 pytest -p no:cacheprovider tests/test_monitoring_interventions.py::test_mismatched_actionability_fingerprint_rejects_before_mutation_and_valid_action_remains
+PYTHONDONTWRITEBYTECODE=1 pytest -p no:cacheprovider tests/test_monitoring_interventions.py::test_actionability_fingerprint_rejects_request_copied_from_stale_snapshot
+PYTHONDONTWRITEBYTECODE=1 pytest -p no:cacheprovider tests/test_monitoring_interventions.py::test_guarded_current_attempt_cancel_uses_snapshot_fingerprint_and_durable_context
+```
+
+Reported summarized results:
+
+- `1 passed in 1.09s`
+- `1 passed in 0.35s`
+- `1 passed in 0.34s`
+
+Claims supported by this Codex-reported deterministic validation:
+
+- stale or mismatched actionability fingerprints reject before mutation;
+- stale snapshot requests fail closed;
+- valid guarded cancel uses snapshot fingerprint and durable CP context;
+- CP workflow/query state remains guarded-action authority.
+
+Claims not supported by this Codex-reported deterministic validation:
+
+- live Temporal behavior;
+- supported-local behavior;
+- ES runtime behavior;
+- browser or WebAuthn behavior;
+- Remote Alpha behavior;
+- Linux-host behavior;
+- Docker, Nomad, Vault, or SPIRE behavior.
+
+No live, supported-local, Remote Alpha, Linux-host, Docker, Nomad, Vault, SPIRE,
+or Temporal server validation was run for this record.
 
 ## Tier 1: static/example fixture
 
@@ -39,10 +83,12 @@ Fail interpretation:
 
 ## Tier 2: deterministic CP test-backed validation
 
-Purpose: later confirm the CP guarded route and stale/fresh behavior using
-existing deterministic CP tests.
+Purpose: bound deterministic confirmation of the CP guarded route and
+stale/fresh behavior using existing deterministic CP tests.
 
-Commands found but not run:
+Codex-reported deterministic validation for this tier is recorded above and in
+`.docs/deterministic-validation-2026-05-27.md`. The originally identified
+deterministic command scope was:
 
 ```bash
 pytest tests/test_monitoring_interventions.py::test_mismatched_actionability_fingerprint_rejects_before_mutation_and_valid_action_remains
@@ -50,7 +96,7 @@ pytest tests/test_monitoring_interventions.py::test_actionability_fingerprint_re
 pytest tests/test_monitoring_interventions.py::test_guarded_current_attempt_cancel_uses_snapshot_fingerprint_and_durable_context
 ```
 
-Expected support if later run and passing:
+Expected support for a bounded deterministic validation record:
 
 - stale or mismatched fingerprints reject with `effect_status=none`;
 - no provider request is produced by the stale request;
@@ -101,15 +147,10 @@ Non-claims for this tier:
 - not runtime identity or Vault credential success unless separately proven by
   the owning contracts.
 
-## Commands found but not run
+## Optional live commands found but not run
 
-Deterministic commands:
-
-- `pytest tests/test_monitoring_interventions.py::test_mismatched_actionability_fingerprint_rejects_before_mutation_and_valid_action_remains`
-- `pytest tests/test_monitoring_interventions.py::test_actionability_fingerprint_rejects_request_copied_from_stale_snapshot`
-- `pytest tests/test_monitoring_interventions.py::test_guarded_current_attempt_cancel_uses_snapshot_fingerprint_and_durable_context`
-
-Optional live commands:
+The deterministic commands with their Codex-reported deterministic validation
+summaries are recorded above. Optional live commands remain not run:
 
 - `python ../supported_local_validation_driver.py --mode temporal-cancel --config config.execution-substrate-supported-local.yaml --project-root . --supported-local-profile supported-local-client-profile.yaml`
 - `python ../execution_substrate_temporal_normal_shell_smoke.py --config config.execution-substrate-supported-local.yaml --project-root . --cancel-current-attempt`

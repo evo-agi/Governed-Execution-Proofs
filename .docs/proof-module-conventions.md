@@ -71,6 +71,24 @@ Use validation labels plainly:
 
 Static modules should default to `not_run`.
 
+## Validation records
+
+Static example YAML files may remain `validation_status: "not_run"` because
+they are examples, not actual run summaries. Actual validation results should be
+recorded separately as validation ledgers or module validation-plan updates.
+
+Validation records must distinguish:
+
+- static example;
+- Codex-reported deterministic validation or other Codex-reported validation;
+- independently inspected validation output;
+- live proof output;
+- inference.
+
+Validation records must never convert validation output, generated artifacts,
+reports, traces, support bundles, retained bundles, profiles, logs, or `.out`
+material into authority.
+
 ## Evidence reference rules
 
 Use repo-relative references only, such as:

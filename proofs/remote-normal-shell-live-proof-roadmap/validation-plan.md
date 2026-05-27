@@ -12,6 +12,16 @@ remote-alpha, or Linux-host commands.
 Future validation requires an explicit operator decision in the owning repos.
 This module is not itself authorization to run validation.
 
+## Deterministic validation status note (2026-05-27)
+
+The Codex-reported deterministic validation pass recorded in
+`.docs/deterministic-validation-2026-05-27.md` did not run this remote roadmap.
+The roadmap remains future-facing, and Linux-host validation is deferred. No
+supported-local, Remote Alpha, Linux-host, Docker, Nomad, Vault, SPIRE, or
+Temporal server commands were run for this roadmap status note.
+
+Milestone 3 and live proof claims remain unvalidated.
+
 ## Tier 1: static roadmap review
 
 Purpose: confirm that the proof package shape is clear before any live
@@ -213,4 +223,3 @@ promote evidence from another tier and does not remove any explicit non-claim.
 
 Failure means the proof should stop and report the failed tier without
 reinterpreting generated artifacts as authority or widening product semantics.
-

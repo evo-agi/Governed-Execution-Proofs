@@ -2,12 +2,55 @@
 
 ## Current status
 
-Status: `not_run`.
+Static example status: `not_run`.
 
 This module is static proof-planning material. It was created without running
 tests, scripts, servers, setup commands, bringup commands, proof commands,
 validation commands, supported-local commands, Remote Alpha commands, Docker,
 Nomad, Vault, SPIRE, or Temporal.
+
+The static example remains `not_run`. The deterministic record below captures
+Codex-reported deterministic validation separately from the static example and
+is not live proof output.
+
+## Deterministic validation record (2026-05-27)
+
+Type: Codex-reported deterministic validation.
+
+Reference ledger: `.docs/deterministic-validation-2026-05-27.md`.
+
+Reported commands:
+
+```bash
+go test -run TestPrimaryMilestoneRealignmentPreservesESOwnership -count=1 .
+go test ./...
+```
+
+Reported summarized results:
+
+- targeted test: `ok execution-substrate 0.242s`
+- full `go test ./...` reported as passing across packages
+
+Claims supported by this Codex-reported deterministic validation:
+
+- ES owns admission and runtime boundaries;
+- prepare, submit, status, result, cancel, and log surfaces stay bounded ES
+  envelope or evidence surfaces;
+- lifecycle projection remains evidence/projection;
+- retained results remain opaque ES artifacts;
+- `authority_handoff` is non-secret handoff evidence, not credential or CP
+  authority.
+
+Claims not supported by this Codex-reported deterministic validation:
+
+- live runtime proof;
+- Nomad, Docker, Vault, SPIRE, or Temporal live behavior;
+- Remote Alpha or Linux-host behavior;
+- CP semantic finalization;
+- live retained-result availability.
+
+No live runtime, supported-local, Remote Alpha, Linux-host, Docker, Nomad,
+Vault, SPIRE, or Temporal server validation was run for this record.
 
 ## Tier 1: static/example fixture
 
@@ -47,17 +90,19 @@ Fail interpretation:
 - The example treats Remote Alpha, production readiness, service health, submit
   readiness, or provider/runtime success as proven.
 
-## Tier 2: later deterministic source validation
+## Tier 2: deterministic source validation
 
-Purpose: optionally confirm that existing source-level tests and docs still
-support the static labels before publication or promotion.
+Purpose: confirm that existing source-level tests and docs still support the
+static labels before publication or promotion.
 
-This tier is not run by this module. It requires explicit parent authorization
-and must remain bounded to existing deterministic source checks. It must not
-create proof outputs, support bundles, retained bundles, shared frameworks,
-schemas, or generated artifacts in this proof module.
+Codex-reported deterministic validation for this tier is recorded above and in
+`.docs/deterministic-validation-2026-05-27.md`. Any future promotion beyond this
+record requires explicit parent authorization and must remain bounded to
+existing deterministic source checks. It must not create proof outputs, support
+bundles, retained bundles, shared frameworks, schemas, or generated artifacts in
+this proof module.
 
-Expected support if later authorized and passing:
+Expected support for a bounded deterministic validation record:
 
 - producer contract still emits explicit `non_authority` classifications;
 - prepare still creates no run id, scheduler handoff, proto-execution state, or

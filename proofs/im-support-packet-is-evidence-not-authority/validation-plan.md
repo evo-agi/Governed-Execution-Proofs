@@ -2,12 +2,59 @@
 
 ## Current status
 
-Status: `not_run`.
+Static example status: `not_run`.
 
 This module is static proof-planning material. It was created without running
 tests, scripts, servers, bringup commands, proof commands, validation commands,
 Docker, Nomad, Vault, SPIRE, Temporal, supported-local commands, Remote Alpha
 commands, live host commands, or support-bundle commands.
+
+The static example remains `not_run`. The deterministic record below captures
+Codex-reported deterministic validation separately from the static example and
+is not live proof output.
+
+## Deterministic validation record (2026-05-27)
+
+Type: Codex-reported deterministic validation.
+
+Reference ledger: `.docs/deterministic-validation-2026-05-27.md`.
+
+Initial import-path collection issue:
+
+- `ModuleNotFoundError: No module named 'infra_manager'`
+
+Rerun posture:
+
+- `PYTHONPATH=src`
+- no installs
+
+Reported summarized passing batches:
+
+- `6 passed`
+- `32 passed`
+- `72 passed`
+
+Claims supported by this Codex-reported deterministic validation:
+
+- IM outputs remain diagnostics/provenance/evidence only;
+- Remote Alpha readiness and support artifacts preserve non-authority labels;
+- support bundles do not become CP or ES authority;
+- malformed, stale, secret-like, or overclaiming evidence fails closed;
+- no-contact support-bundle boundary behavior is covered.
+
+Claims not supported by this Codex-reported deterministic validation:
+
+- live host contact;
+- Remote Alpha live proof;
+- Linux-host behavior;
+- Docker, Nomad, Vault, SPIRE, or Temporal behavior;
+- production readiness;
+- CP authority;
+- ES runtime behavior.
+
+The bare invocation issue is recorded as an import-path collection issue, not a
+proof failure. The later Codex-reported deterministic validation is not
+packaging/install validation and not live host validation.
 
 ## Tier 1: static/example review
 
