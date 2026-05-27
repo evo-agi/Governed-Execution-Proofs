@@ -52,6 +52,21 @@ Claims not supported by this Codex-reported deterministic validation:
 No live runtime, supported-local, Remote Alpha, Linux-host, Docker, Nomad,
 Vault, SPIRE, or Temporal server validation was run for this record.
 
+## Phase A/B supporting live evidence note (2026-05-27)
+
+Reference: `.docs/live-validation-phase-a-2026-05-27.md`.
+
+Phase A provides Codex-reported live supporting evidence for ES
+envelope/preflight/handoff/retained-result references in one bounded
+`temporal-basic` CP Temporal normal-shell path. Phase B records a
+Codex-reported post-run audit over summaries, manifests, metadata, and artifact
+classes.
+
+This note does not change ES authority boundaries. ES contract, preflight,
+handoff, lifecycle/status/result, and retained-result references remain ES
+evidence/projection and do not become CP semantic finalization. This note also
+does not prove production or runtime health generally.
+
 ## Tier 1: static/example fixture
 
 Purpose: document the intended proof shape without importing product code,

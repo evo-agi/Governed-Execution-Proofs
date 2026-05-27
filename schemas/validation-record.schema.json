@@ -1,0 +1,329 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/governed-execution-validation-record.schema.json",
+  "title": "Governed Execution Validation Record",
+  "type": "object",
+  "required": [
+    "validation_id",
+    "validation_type",
+    "validation_status",
+    "date",
+    "baseline_commit",
+    "module_ids",
+    "commands_run_summary",
+    "claims_supported",
+    "claims_not_supported",
+    "artifact_classes",
+    "raw_artifacts_committed",
+    "independent_audit",
+    "redaction_review",
+    "live_host_contact",
+    "support_bundle_generated"
+  ],
+  "properties": {
+    "validation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "validation_type": {
+      "type": "string",
+      "enum": [
+        "static_example",
+        "codex_reported_deterministic",
+        "codex_reported_live",
+        "independently_inspected"
+      ]
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": [
+        "not_run",
+        "blocked",
+        "deferred",
+        "codex_reported_deterministic_passed",
+        "codex_reported_deterministic_failed",
+        "codex_reported_live_phase_a_passed",
+        "codex_reported_live_failed",
+        "independently_inspected_passed",
+        "independently_inspected_failed"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "baseline_commit": {
+      "type": "string",
+      "minLength": 7
+    },
+    "module_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "commands_run_summary": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "claims_supported": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "claims_not_supported": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "artifact_classes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "class",
+          "classification"
+        ],
+        "properties": {
+          "class": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classification": {
+            "type": "string",
+            "minLength": 1
+          },
+          "raw_committed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      },
+      "minItems": 1
+    },
+    "raw_artifacts_committed": {
+      "type": "boolean"
+    },
+    "independent_audit": {
+      "type": "boolean"
+    },
+    "redaction_review": {
+      "type": "object",
+      "required": [
+        "status",
+        "raw_payloads_reviewed",
+        "sensitive_payloads_committed"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_run",
+            "blocked",
+            "reviewed",
+            "redaction_required"
+          ]
+        },
+        "raw_payloads_reviewed": {
+          "type": "boolean"
+        },
+        "sensitive_payloads_committed": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "live_host_contact": {
+      "type": "boolean"
+    },
+    "support_bundle_generated": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "validation_status": {
+            "enum": [
+              "codex_reported_deterministic_passed",
+              "codex_reported_deterministic_failed",
+              "codex_reported_live_phase_a_passed",
+              "codex_reported_live_failed",
+              "independently_inspected_passed",
+              "independently_inspected_failed"
+            ]
+          }
+        },
+        "required": [
+          "validation_status"
+        ]
+      },
+      "then": {
+        "required": [
+          "commands_run_summary",
+          "claims_supported",
+          "claims_not_supported",
+          "artifact_classes",
+          "raw_artifacts_committed",
+          "independent_audit",
+          "redaction_review"
+        ],
+        "properties": {
+          "commands_run_summary": {
+            "minItems": 1
+          },
+          "claims_supported": {
+            "minItems": 1
+          },
+          "claims_not_supported": {
+            "minItems": 1
+          },
+          "artifact_classes": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "validation_status": {
+            "enum": [
+              "codex_reported_deterministic_passed",
+              "codex_reported_deterministic_failed"
+            ]
+          }
+        },
+        "required": [
+          "validation_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation_type": {
+            "const": "codex_reported_deterministic"
+          },
+          "independent_audit": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "validation_status": {
+            "enum": [
+              "codex_reported_live_phase_a_passed",
+              "codex_reported_live_failed"
+            ]
+          }
+        },
+        "required": [
+          "validation_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation_type": {
+            "const": "codex_reported_live"
+          },
+          "independent_audit": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "validation_status": {
+            "enum": [
+              "independently_inspected_passed",
+              "independently_inspected_failed"
+            ]
+          }
+        },
+        "required": [
+          "validation_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation_type": {
+            "const": "independently_inspected"
+          },
+          "independent_audit": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "validation_type": {
+            "enum": [
+              "codex_reported_deterministic",
+              "codex_reported_live"
+            ]
+          }
+        },
+        "required": [
+          "validation_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "independent_audit": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "independent_audit": {
+            "const": true
+          }
+        },
+        "required": [
+          "independent_audit"
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation_type": {
+            "const": "independently_inspected"
+          },
+          "validation_status": {
+            "enum": [
+              "independently_inspected_passed",
+              "independently_inspected_failed"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}

@@ -2,7 +2,10 @@
 
 ## Current status
 
-Status: `not_run`.
+Static example status: `not_run`.
+
+Live validation record: Codex-reported live Phase A passed; Phase B post-run
+audit ready for proof-doc update.
 
 This module is static proof-planning material. It was created without running
 tests, scripts, servers, bringup commands, setup commands, proof commands,
@@ -34,6 +37,25 @@ The Linux/Remote Alpha live validation plan is recorded in
 Linux-host validation is deferred until explicit authorization. This roadmap
 remains future-facing. Generated live evidence will require post-run audit
 before proof claims are updated.
+
+## Phase A/B live validation record (2026-05-27)
+
+Status: Codex-reported live Phase A passed; Phase B post-run audit ready for
+proof-doc update.
+
+Reference: `.docs/live-validation-phase-a-2026-05-27.md`.
+
+Phase A is recorded as one bounded Remote Alpha `temporal-basic` CP Temporal
+normal-shell path completed through the documented CP stage-gated driver. Phase
+B is recorded as a Codex-reported post-run audit over summaries, manifests,
+metadata, and artifact classes.
+
+Support bundle remains deferred. Raw artifacts remain excluded. Public/demo
+readiness remains unclaimed.
+
+This record does not change the static `proof-summary.example.yaml`, which
+remains `validation_status: "not_run"` because it is an example, not generated
+run output.
 
 ## Tier 1: static roadmap review
 

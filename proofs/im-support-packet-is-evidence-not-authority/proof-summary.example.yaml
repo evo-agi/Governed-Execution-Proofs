@@ -85,7 +85,7 @@ authority_labels:
       - "digest identity evidence"
       - "non-authority labels"
 
-supported_claims:
+claims_supported:
   - "IM support outputs explain environment provenance and diagnostics only"
   - "support-packet digest values identify copied summary artifacts only"
   - "redaction and deny scan are shareability guardrails only"

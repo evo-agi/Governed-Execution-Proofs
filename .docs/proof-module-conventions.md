@@ -64,10 +64,21 @@ bundles do not become semantic finalization.
 Use validation labels plainly:
 
 - `not_run`: no validation command was run for this proof.
-- `planned`: future validation is described but not executed.
 - `blocked`: validation could not proceed under the stated controls.
-- `passed`: only for a later authorized validation record that names the scope,
-  commands, evidence, and non-claims.
+- `deferred`: validation was intentionally postponed under the stated controls.
+- `codex_reported_deterministic_passed`: Codex reported a deterministic local
+  proof-tooling check passed, with command summary, supported and unsupported
+  claims, artifact classes, raw-artifact flag, independent-audit flag, and
+  redaction review recorded.
+- `codex_reported_deterministic_failed`: Codex reported a deterministic local
+  proof-tooling check failed with the same bounded record fields.
+- `codex_reported_live_phase_a_passed`: Codex reported the bounded live Phase A
+  scope passed; it is still not independent inspection.
+- `codex_reported_live_failed`: Codex reported a bounded live check failed.
+- `independently_inspected_passed`: a separate independent inspection passed
+  and records its own provenance.
+- `independently_inspected_failed`: a separate independent inspection failed
+  and records its own provenance.
 
 Static modules should default to `not_run`.
 
@@ -76,6 +87,9 @@ Static modules should default to `not_run`.
 Static example YAML files may remain `validation_status: "not_run"` because
 they are examples, not actual run summaries. Actual validation results should be
 recorded separately as validation ledgers or module validation-plan updates.
+Static `proof-summary.example.yaml` files must remain `not_run`; deterministic,
+live, or independently inspected outcomes belong in validation records or
+ledgers, not static examples.
 
 Validation records must distinguish:
 
@@ -85,9 +99,27 @@ Validation records must distinguish:
 - live proof output;
 - inference.
 
+Codex-reported records must not imply independent inspection. Any passed or
+live status must record command provenance or summary, supported and unsupported
+claims, artifact classes, whether raw artifacts were committed, whether an
+independent audit occurred, and explicit redaction review.
+
 Validation records must never convert validation output, generated artifacts,
 reports, traces, support bundles, retained bundles, profiles, logs, or `.out`
 material into authority.
+
+## Local checker scope
+
+Local checkers in this repo are linting tools only. They do not run product
+systems, contact hosts, validate runtime truth, ingest raw generated artifacts,
+or promote local proof output into authority.
+
+Checkers may enforce authored proof-package shape, static example status
+labels, claim and non-claim completeness, repo-relative reference hygiene,
+authority/evidence wording, and redaction-risk rules. A checker pass means only
+that the authored docs match the local proof conventions; it is not CP
+run-control authority, ES runtime authority, IM readiness/support authority,
+live validation, independent audit, or public/demo readiness.
 
 ## Evidence reference rules
 

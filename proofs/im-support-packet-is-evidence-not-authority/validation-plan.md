@@ -56,6 +56,18 @@ The bare invocation issue is recorded as an import-path collection issue, not a
 proof failure. The later Codex-reported deterministic validation is not
 packaging/install validation and not live host validation.
 
+## Phase A/B limited provenance note (2026-05-27)
+
+Reference: `.docs/live-validation-phase-a-2026-05-27.md`.
+
+Phase A and Phase B provide limited Codex-reported profile/config/preflight
+provenance for the bounded `temporal-basic` CP Temporal normal-shell path. No
+support bundle was generated.
+
+IM support-bundle claims remain unvalidated. IM profile/config/preflight
+provenance remains diagnostics/provenance only and does not become CP
+run-control authority or ES runtime authority.
+
 ## Tier 1: static/example review
 
 Purpose: document the intended proof shape without importing product code,
