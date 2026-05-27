@@ -34,9 +34,19 @@ def write_minimal_repo(tmp_path: Path, module_id: str = "example-proof") -> Path
     (module / "scenario.md").write_text(
         """# Scenario
 
-## Validation status
+## Current evidence status
 
-Static example status: `not_run`.
+Current proof evidence:
+
+- Static fixture evidence only.
+- Independent audit: not claimed.
+- Public/demo readiness: not claimed.
+
+## Static example summary status
+
+`proof-summary.example.yaml` is a static template only. It remains
+`validation_status: "not_run"` by convention and is not the proof evidence
+status.
 
 ## Authority boundaries
 
@@ -140,6 +150,13 @@ def test_current_proof_modules_pass_checker() -> None:
     assert result.returncode == 0, result.stdout + result.stderr
 
 
+def test_current_scenarios_have_evidence_and_static_summary_status_headings() -> None:
+    for scenario in sorted((REPO_ROOT / "proofs").glob("*/scenario.md")):
+        text = scenario.read_text(encoding="utf-8")
+        assert "## Current evidence status" in text, scenario
+        assert "## Static example summary status" in text, scenario
+
+
 def test_current_authored_docs_pass_redaction_scan() -> None:
     result = run_tool(SCANNER, REPO_ROOT)
     assert result.returncode == 0, result.stdout + result.stderr
@@ -163,6 +180,60 @@ def test_static_yaml_with_passed_status_fails(tmp_path: Path) -> None:
     result = run_tool(CHECKER, repo)
     assert result.returncode != 0
     assert "validation_status" in result.stdout
+
+
+def test_scenario_static_example_status_without_current_evidence_fails(tmp_path: Path) -> None:
+    repo = write_minimal_repo(tmp_path)
+    scenario = repo / "proofs" / "example-proof" / "scenario.md"
+    scenario.write_text(
+        """# Scenario
+
+## Validation status
+
+Static example status: `not_run`.
+
+## Authority boundaries
+
+CP authority, ES evidence/projection, and IM diagnostics remain separate.
+
+## Generated artifacts
+
+Generated artifacts are evidence-only and excluded from committed proof docs.
+""",
+        encoding="utf-8",
+    )
+
+    result = run_tool(CHECKER, repo)
+    assert result.returncode != 0
+    assert "headline not_run status" in result.stdout
+    assert "Current evidence status" in result.stdout
+
+
+def test_scenario_current_status_not_run_without_current_evidence_fails(tmp_path: Path) -> None:
+    repo = write_minimal_repo(tmp_path)
+    scenario = repo / "proofs" / "example-proof" / "scenario.md"
+    scenario.write_text(
+        """# Scenario
+
+## Validation status
+
+Current status: `not_run`.
+
+## Authority boundaries
+
+CP authority, ES evidence/projection, and IM diagnostics remain separate.
+
+## Generated artifacts
+
+Generated artifacts are evidence-only and excluded from committed proof docs.
+""",
+        encoding="utf-8",
+    )
+
+    result = run_tool(CHECKER, repo)
+    assert result.returncode != 0
+    assert "headline not_run status" in result.stdout
+    assert "Current evidence status" in result.stdout
 
 
 def test_scenario_id_mismatch_fails(tmp_path: Path) -> None:

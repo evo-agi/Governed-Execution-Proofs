@@ -1,10 +1,30 @@
 # Remote Normal-Shell Live Proof Roadmap
 
+## Current evidence status
+
+Current proof evidence:
+
+- The roadmap remains broader and future-facing.
+- Phase A Codex-reported live evidence exists for one bounded Remote Alpha
+  `temporal-basic` CP Temporal normal-shell path.
+- Phase B post-run audit was ready for proof-doc update.
+- Governed lifecycle run evidence is not yet recorded in this module.
+- Support bundle: deferred.
+- Independent audit: not claimed.
+- Public/demo readiness: not claimed.
+
+## Static example summary status
+
+`proof-summary.example.yaml` is a static template only. It remains
+`validation_status: "not_run"` by convention and is not the proof evidence
+status.
+
 ## Scenario summary
 
-This module defines the future capstone proof package for the remote Linux host
-path. It is a roadmap and validation contract only. It does not claim that the
-live remote proof has already run.
+This module defines the broader future capstone proof package for the remote
+Linux host path. It is a roadmap and validation contract with bounded Phase A
+live evidence recorded separately; it does not claim that the full roadmap proof
+has already run.
 
 The future proof is expected to cover one bounded, opt-in Control Plane
 normal-shell task attempt through the remote governed-execution path:
@@ -144,12 +164,3 @@ This roadmap excludes:
   credential material;
 - real run ids, real provider ids, real hashes, real bundle references, local
   absolute paths, or remote filesystem paths as proof payload.
-
-## Validation status
-
-Current status: `not_run`.
-
-No tests, scripts, servers, bringup commands, proof commands, validation
-commands, setup commands, Docker, Nomad, Vault, SPIRE, Temporal, supported-local,
-remote-alpha, or Linux-host commands were run to create this module.
-

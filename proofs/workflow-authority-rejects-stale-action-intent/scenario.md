@@ -1,5 +1,24 @@
 # Workflow Authority Rejects Stale Action Intent
 
+## Current evidence status
+
+Current proof evidence:
+
+- Codex-reported deterministic CP stale-action tests passed in
+  `.docs/deterministic-validation-2026-05-27.md`.
+- Optional live/supported-local guarded-intervention commands remain not run.
+- No provider-side cancel or intervention effect is claimed.
+- No live Temporal, supported-local, Remote Alpha, ES runtime, browser/WebAuthn,
+  Docker, Nomad, Vault, or SPIRE behavior is claimed.
+- Independent audit: not claimed.
+- Public/demo readiness: not claimed.
+
+## Static example summary status
+
+`proof-summary.example.yaml` is a static template only. It remains
+`validation_status: "not_run"` by convention and is not the proof evidence
+status.
+
 ## Scenario summary
 
 This proof documents the smallest governed-execution actionability boundary:
@@ -157,12 +176,3 @@ This proof does not prove:
 
 It also does not treat preflight or prepare as execution, and it does not treat
 runtime identity handoff as token brokerage.
-
-## Validation status
-
-Current status: `not_run`.
-
-No tests, scripts, bringup commands, proof commands, validation commands,
-supported-local commands, Docker, Nomad, Vault, SPIRE, Temporal, or server
-commands were run to create this module. The module is static narrative and
-example material only.

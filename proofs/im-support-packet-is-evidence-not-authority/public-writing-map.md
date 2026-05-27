@@ -21,6 +21,8 @@ packet remains evidence.
 - Digest-first provenance can identify copied summary artifacts without
   turning those artifacts into live truth.
 - Redaction and deny scans are shareability guardrails, not authority.
+- Codex-reported deterministic IM validation supports the non-authority boundary.
+- No IM support bundle was generated; support-bundle claims remain unvalidated.
 - Static proof examples must remain synthetic and clearly marked `not_run`.
 
 ## What the proof does not demonstrate
@@ -107,9 +109,11 @@ Use these labels consistently:
 - `IM provenance/diagnostics`: profile, doctor, readiness, support-bundle
   assembly, redaction, and digest manifesting.
 - `Support packet evidence`: copied summary artifacts and non-authority labels.
-- `Static example`: the example YAML in this module.
-- `Not run`: every validation path unless a later owner records a separate
-  validation pass.
+- `Static example`: the example YAML in this module, which remains
+  `validation_status: "not_run"`.
+- `Support-bundle status`: no IM support bundle was generated; support-bundle
+  claims remain unvalidated unless a later owner records a separate validation
+  pass.
 
 ## Theory vs repo-grounded evidence vs validation
 
@@ -117,7 +121,9 @@ Use these labels consistently:
   authority paths.
 - Repo-grounded evidence: cited IM, CP, and ES docs/source/tests in
   `evidence-map.md`.
-- Codex-reported validation: none. This module is static and `not_run`.
+- Codex-reported validation: deterministic IM validation is recorded in
+  `.docs/deterministic-validation-2026-05-27.md`; the static example remains
+  `validation_status: "not_run"`.
 - Inference: this scenario is a safe static proof because the IM docs and source
   already require non-authority labels, digest-first provenance, and redaction
   boundaries.

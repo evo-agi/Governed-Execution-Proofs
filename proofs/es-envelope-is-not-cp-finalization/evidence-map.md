@@ -1,9 +1,12 @@
 # Evidence Map
 
-This map ties the static proof statements to repo evidence. The proof module
-itself is not validation output. Tests were not run during module creation. Line
-references are source-inspection anchors and should be re-audited after repo
-changes.
+This map ties proof statements to repo evidence. The proof module itself is not
+validation output. Current evidence status is recorded separately: Codex-reported
+deterministic ES validation exists in
+`.docs/deterministic-validation-2026-05-27.md`, and Codex-reported Phase A live
+supporting evidence exists in `.docs/live-validation-phase-a-2026-05-27.md`.
+Line references are source-inspection anchors and should be re-audited after
+repo changes.
 
 ## Documentation posture
 
@@ -230,7 +233,9 @@ changes.
 - Repo evidence above was inspected as safe text/source/test material.
 - The line references are anchors, not immutable citations. Re-audit them after
   ES or CP repo changes.
-- This module does not claim that any tests or validation commands passed.
+- This evidence map is not itself command output. Deterministic ES validation
+  and Phase A supporting live evidence are recorded separately from the static
+  example.
 - This module does not include live run data, retained bundles, support
   bundles, raw logs, raw reports, raw traces, raw prompts, raw model outputs,
   credentials, local absolute paths, or generated artifact payloads.

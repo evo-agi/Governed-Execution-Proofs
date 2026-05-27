@@ -46,6 +46,15 @@ AUTHORITY_LABEL_FIELDS = {
     "evidence_projection_facts",
 }
 
+REQUIRED_SCENARIO_STATUS_HEADINGS = (
+    "## Current evidence status",
+    "## Static example summary status",
+)
+
+HEADLINE_NOT_RUN_STATUS_RE = re.compile(
+    r"(?im)^\s*(?:Static example status|Current status|Validation status):\s*`?not_run`?\.?\s*$"
+)
+
 ABSOLUTE_LOCAL_PATH_RE = re.compile(r"(?<![\w.-])/(?:Users/[^`\s)]+|mnt/data(?:/[^`\s)]*)?)")
 ADJACENT_ABSOLUTE_REF_RE = re.compile(
     r"(Control Plane|Execution Substrate|Infrastructure Manager):\s*/"
@@ -348,6 +357,24 @@ def validate_markdown_shape(module: Path, texts: dict[str, str]) -> list[str]:
     return diagnostics
 
 
+def validate_scenario_status(module: Path, text: str) -> list[str]:
+    diagnostics: list[str] = []
+
+    for heading in REQUIRED_SCENARIO_STATUS_HEADINGS:
+        if heading not in text:
+            diagnostics.append(f"{module}/scenario.md: missing {heading}")
+
+    for match in HEADLINE_NOT_RUN_STATUS_RE.finditer(text):
+        window = text[max(0, match.start() - 800) : min(len(text), match.end() + 800)]
+        if "## Current evidence status" not in window:
+            line_no = text.count("\n", 0, match.start()) + 1
+            diagnostics.append(
+                f"{module}/scenario.md:{line_no}: headline not_run status must be separated from current proof evidence status"
+            )
+
+    return diagnostics
+
+
 def line_allows_forbidden_phrase(line: str, heading: str, yaml_key: str | None) -> bool:
     lower_line = f" {line.lower()} "
     lower_heading = heading.lower()
@@ -443,6 +470,7 @@ def validate_module(root: Path, module: Path) -> list[str]:
 
     markdown_texts = {name: text for name, text in texts.items() if name.endswith(".md")}
     diagnostics.extend(validate_markdown_shape(module, markdown_texts))
+    diagnostics.extend(validate_scenario_status(module, texts.get("scenario.md", "")))
 
     for name, text in texts.items():
         diagnostics.extend(validate_text_hygiene(module, name, text))

@@ -22,6 +22,8 @@ fingerprint, and reject stale action intent before mutation.
   operator, but they are not run-control truth.
 - A fresh accepted cancel request is a guarded Control Plane receipt, not proof
   of provider-side effect or terminal runtime outcome.
+- Codex-reported deterministic CP stale-action tests passed for the bounded
+  stale/fresh guarded-action behavior.
 
 ## What the proof does not demonstrate
 
@@ -113,17 +115,18 @@ Use these labels consistently:
   metadata.
 - "IM provenance/diagnostics": profiles, readiness, doctor output, support
   bundles, redaction summaries, and instance state.
-- "Static example": the proof-summary example in this module.
-- "Not run": validation commands listed in this module unless a later validation
-  pass explicitly runs and records them.
+- "Static example": the proof-summary example in this module, which remains
+  `validation_status: "not_run"`.
+- "Optional live status": live/supported-local guarded-intervention commands
+  remain not run unless a later validation pass explicitly runs and records them.
 
 ## Theory vs repo-grounded evidence vs Codex-reported validation vs inference
 
 - Theory: why stale action intent should not be authority.
 - Repo-grounded evidence: cited CP, ES, and IM docs/source/tests in
   `evidence-map.md`.
-- Codex-reported validation: planning and inspection reports only; no tests were
-  run during module creation.
+- Codex-reported validation: deterministic CP stale-action validation is recorded
+  in `.docs/deterministic-validation-2026-05-27.md`.
 - Inference: this scenario is the smallest first proof because
   `cancel-current-attempt` has direct stale rejection plus fresh guarded cancel
   evidence without proving all intervention verbs.

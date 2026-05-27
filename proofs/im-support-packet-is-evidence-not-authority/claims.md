@@ -1,9 +1,11 @@
 # Claims
 
-Validation status: this module is static/example-first. No live support bundle,
-support-bundle command, readiness refresh, CP proof, ES proof, test, script,
-server, Docker, Nomad, Vault, SPIRE, Temporal, supported-local, Remote Alpha, or
-live host command has been run for this proof module.
+Current evidence status: Codex-reported deterministic IM validation exists in
+`.docs/deterministic-validation-2026-05-27.md`. No IM support bundle was
+generated, support-bundle claims remain unvalidated, and Phase A/B adds limited
+profile/config/preflight provenance only. The static example remains
+`validation_status: "not_run"` because it is a template, not proof evidence
+status. Independent audit and public/demo readiness are not claimed.
 
 ## Supported claims
 
@@ -121,5 +123,5 @@ Before publication or validation, verify:
 - Does the text avoid Remote Alpha production-readiness claims?
 - Does the text preserve digest identity as evidence only?
 - Does the text exclude raw generated and sensitive artifact classes?
-- Does the text keep `validation_status: "not_run"` until a separately
-  authorized validation pass exists?
+- Does the text keep the static example at `validation_status: "not_run"` while
+  recording actual evidence status separately?

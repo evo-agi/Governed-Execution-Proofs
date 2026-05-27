@@ -1,13 +1,29 @@
 # Scenario
 
-## Validation status
+## Current evidence status
 
-Static example status: `not_run`.
+Current proof evidence:
+
+- Codex-reported 0B no-network plan-only harness-isolation evidence: passed.
+- Codex-reported 0C bounded live Remote Alpha `temporal-basic` evidence: passed.
+- Confirmed class: CP to ES `temporal-basic` with explicit isolation leases,
+  generated runtime config as live `--config`, and no supported-local profile
+  re-forwarding.
+- Other proof classes require a Proof 0 continuation before parallel live
+  execution.
+- Support bundle: not part of the Proof 0 ledger.
+- Independent audit: not claimed.
+- Public/demo readiness: not claimed.
+
+## Static example summary status
+
+`proof-summary.example.yaml` is a static template only. It remains
+`validation_status: "not_run"` by convention and is not the proof evidence
+status.
 
 This module describes Proof 0 as a generic parallel-proof execution and
-harness-isolation policy. The static example remains `not_run`; bounded
-Codex-reported 0B and 0C status is recorded separately in
-`.docs/proof0-concurrency-2026-05-27.md`.
+harness-isolation policy. Bounded Codex-reported 0B and 0C status is recorded
+separately in `.docs/proof0-concurrency-2026-05-27.md`.
 
 This module does not import generated proof output and does not record
 Linux-host contact.

@@ -1,8 +1,11 @@
 # Claims
 
-Validation status: this module is currently static/example-first. No pytest,
-supported-local, ES, IM, Temporal, Docker, Nomad, Vault, SPIRE, browser, or
-WebAuthn validation commands have been run for this proof module yet.
+Current evidence status: Codex-reported deterministic CP stale-action tests
+passed in `.docs/deterministic-validation-2026-05-27.md`. Optional
+live/supported-local guarded-intervention commands remain not run, and no
+provider-side cancel or intervention effect is claimed. The static example
+remains `validation_status: "not_run"` because it is a template, not proof
+evidence status. Independent audit and public/demo readiness are not claimed.
 
 ## Supported claims
 

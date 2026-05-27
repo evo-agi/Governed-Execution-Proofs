@@ -103,9 +103,14 @@ Temporal, production readiness, CP authority, or ES runtime behavior.
 ## Remote roadmap status
 
 Codex-reported deterministic validation did not run
-`proofs/remote-normal-shell-live-proof-roadmap`. The remote normal-shell live
-proof remains future-facing and not run. No Linux-host validation was performed,
-and no supported-local or Remote Alpha commands were run.
+`proofs/remote-normal-shell-live-proof-roadmap`. As of this deterministic
+ledger, the remote normal-shell live proof remained future-facing and not run.
+No Linux-host validation was performed, and no supported-local or Remote Alpha
+commands were run for this deterministic record.
+
+Later bounded live Phase A evidence and Phase B post-run audit status are
+recorded separately in `.docs/live-validation-phase-a-2026-05-27.md`; they do
+not change the deterministic scope recorded here.
 
 ## Claims supported
 

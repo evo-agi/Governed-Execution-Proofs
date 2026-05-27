@@ -1,9 +1,10 @@
 # Evidence Map
 
-This map ties the proof statements to repo evidence. The proof module itself is
-not validation output. Tests were not run during module creation. Line
-references are source-inspection anchors and should be re-audited after repo
-changes.
+This map ties proof statements to repo evidence. The proof module itself is not
+validation output. Current evidence status is recorded separately:
+Codex-reported deterministic CP stale-action tests passed in
+`.docs/deterministic-validation-2026-05-27.md`. Line references are
+source-inspection anchors and should be re-audited after repo changes.
 
 ## CP workflow/actionability authority
 
@@ -161,7 +162,8 @@ changes.
 - Repo evidence above was inspected as safe text/source/test material.
 - The line references are anchors, not immutable citations. Re-audit them after
   CP, ES, IM, or proof-repo changes.
-- This module does not claim that any tests or validation commands passed.
+- This evidence map is not itself command output. Codex-reported deterministic
+  CP stale-action validation is recorded separately from the static example.
 - This module does not include live run data, retained bundles, support bundles,
   raw logs, raw reports, raw traces, raw prompts, raw model outputs, credentials,
   or `.out` payloads.

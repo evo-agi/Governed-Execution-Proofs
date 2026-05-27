@@ -1,5 +1,27 @@
 # ES Envelope Is Not CP Finalization
 
+## Current evidence status
+
+Current proof evidence:
+
+- Codex-reported deterministic ES validation exists in
+  `.docs/deterministic-validation-2026-05-27.md`.
+- Codex-reported Phase A live supporting evidence exists for ES
+  envelope/preflight/handoff/retained-result references in one bounded
+  `temporal-basic` CP Temporal normal-shell path.
+- This is not a full standalone live ES module proof.
+- CP finalization remains CP-owned; ES envelope evidence does not become CP
+  semantic finalization.
+- Support bundle: not claimed for this module.
+- Independent audit: not claimed.
+- Public/demo readiness: not claimed.
+
+## Static example summary status
+
+`proof-summary.example.yaml` is a static template only. It remains
+`validation_status: "not_run"` by convention and is not the proof evidence
+status.
+
 ## Scenario summary
 
 This proof documents a bounded Execution Substrate execution envelope moving
@@ -139,12 +161,3 @@ This proof does not include or inspect:
 - workspaces, checkpoints, quarantines, restores, or local process records;
 - real run ids, provider ids, hashes, bundle references, or local absolute
   paths.
-
-## Validation status
-
-Current status: `not_run`.
-
-No tests, scripts, servers, bringup commands, proof commands, validation
-commands, supported-local commands, Docker, Nomad, Vault, SPIRE, Temporal, or
-remote-alpha commands were run to create this module. The module is static
-narrative and example material only.

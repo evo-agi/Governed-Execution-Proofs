@@ -1,8 +1,12 @@
 # Claims
 
-Validation status: this module is static/example-first. It defines a future
-remote normal-shell live proof roadmap and validation contract. It does not
-claim that the proof has run.
+Current evidence status: this module remains a broader future-facing roadmap,
+while Phase A Codex-reported live evidence and a Phase B post-run audit ready for
+proof-doc update are recorded in `.docs/live-validation-phase-a-2026-05-27.md`.
+Governed lifecycle run evidence is not yet recorded in this module. Support
+bundle generation is deferred. The static example remains
+`validation_status: "not_run"` because it is a template, not proof evidence
+status. Independent audit and public/demo readiness are not claimed.
 
 ## Supported claims
 
@@ -167,8 +171,8 @@ The proof must exclude these classes from committed module files:
 
 Before publication or validation, verify:
 
-- Does the text keep this module at `not_run` until a later validation pass is
-  explicitly executed and recorded?
+- Does the text keep the static example at `validation_status: "not_run"` while
+  recording actual evidence status separately?
 - Does the text preserve CP as workflow/review/finalization authority?
 - Does the text preserve ES as admission/runtime/lifecycle/retained-bundle
   authority without giving ES CP finalization semantics?
@@ -180,4 +184,3 @@ Before publication or validation, verify:
   payloads, and sensitive material?
 - Does the text stop and surface conflicts rather than widening governance
   boundaries?
-

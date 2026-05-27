@@ -1,8 +1,10 @@
 # Evidence Map
 
 This map ties the roadmap statements to repo documentation evidence. The proof
-module itself is not validation output. Tests and validation commands were not
-run during module creation.
+module itself is not validation output. The broader roadmap remains
+future-facing, while bounded Codex-reported Phase A live evidence and Phase B
+post-run audit status are recorded in
+`.docs/live-validation-phase-a-2026-05-27.md`.
 
 ## Cross-repo MVP boundary freeze
 

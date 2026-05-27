@@ -1,13 +1,27 @@
 # Validation Plan
 
-## Current status
+## Current evidence status
 
-Static example status: `not_run`.
+Current proof evidence:
 
-This authored module was added without running live proofs, supported-local
-commands, Remote Alpha commands, Linux-host commands, CP/ES/IM live validation
-commands, Temporal services, fake model servers, Docker, Nomad, Vault, SPIRE,
-or product services.
+- Codex-reported 0B no-network plan-only harness-isolation evidence: passed.
+- Codex-reported 0C bounded live Remote Alpha `temporal-basic` evidence: passed.
+- Confirmed class: CP to ES `temporal-basic` with explicit isolation leases.
+- Other proof classes require a Proof 0 continuation before parallel live
+  execution.
+- Independent audit: not claimed.
+- Public/demo readiness: not claimed.
+
+## Static example summary status
+
+`proof-summary.example.yaml` is a static template only. It remains
+`validation_status: "not_run"` by convention and is not the proof evidence
+status.
+
+At initial static package creation, this authored module was added without
+running live proofs, supported-local commands, Remote Alpha commands, Linux-host
+commands, CP/ES/IM live validation commands, Temporal services, fake model
+servers, Docker, Nomad, Vault, SPIRE, or product services.
 
 The later bounded status is recorded in
 `.docs/proof0-concurrency-2026-05-27.md`:

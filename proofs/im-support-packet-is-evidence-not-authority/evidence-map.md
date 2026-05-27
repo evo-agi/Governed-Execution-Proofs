@@ -1,9 +1,11 @@
 # Evidence Map
 
-This map ties the proof statements to repo evidence. The proof module itself is
-not validation output. Tests and commands were not run during module creation.
-The anchors below are source-inspection references and should be re-audited
-after repo changes.
+This map ties proof statements to repo evidence. The proof module itself is not
+validation output. Current evidence status is recorded separately:
+Codex-reported deterministic IM validation exists in
+`.docs/deterministic-validation-2026-05-27.md`; no IM support bundle was
+generated. The anchors below are source-inspection references and should be
+re-audited after repo changes.
 
 ## IM ownership and non-authority boundary
 
@@ -148,4 +150,6 @@ after repo changes.
 - No generated artifacts, `.out` payloads, live bundles, raw logs, raw reports,
   traces, retained bundles, support bundles, raw prompts, raw model outputs,
   credentials, or local process records were opened or copied.
-- This module does not claim that any validation command passed.
+- This evidence map is not itself command output. Codex-reported deterministic
+  IM validation is recorded separately from the static example, and
+  support-bundle claims remain unvalidated.

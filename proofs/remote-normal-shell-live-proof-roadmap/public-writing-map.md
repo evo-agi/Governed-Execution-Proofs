@@ -32,7 +32,7 @@ success must be validated before being claimed.
 
 ## What this roadmap does not demonstrate
 
-- live Linux validation yet;
+- full broader live Linux roadmap validation;
 - production readiness;
 - high availability;
 - multi-tenancy;
@@ -69,7 +69,8 @@ credentials.
 
 - "This is the validation contract for the future remote normal-shell capstone
   proof."
-- "The proof has not run yet."
+- "The broader roadmap proof has not fully run; bounded Phase A live evidence has
+  been recorded separately."
 - "Control Plane owns workflow state, review, checkpoint, intervention, and
   finalization."
 - "ES owns admission, submit handoff, lifecycle projection, retained opaque
@@ -129,9 +130,11 @@ Use these labels consistently:
   `authority_handoff`, logs/result/cancel evidence, and retained-result refs.
 - **IM provenance/diagnostics**: profiles, doctor output, readiness reports,
   support bundles, redaction, and source-profile lineage.
-- **Static example**: this module's `proof-summary.example.yaml`.
-- **Not run**: every validation stage until a later authorized validation pass
-  records fresh same-run evidence.
+- **Static example**: this module's `proof-summary.example.yaml`, which remains
+  `validation_status: "not_run"`.
+- **Roadmap stages not yet recorded**: any stage beyond the bounded Phase A/B
+  record until a later authorized validation pass records fresh same-run
+  evidence.
 
 ## Theory vs evidence vs validation vs inference
 
@@ -139,9 +142,9 @@ Use these labels consistently:
   than one broad "remote worked" assertion.
 - Repo-grounded evidence: cited CP, ES, and IM documentation in
   `evidence-map.md`.
-- Codex-reported validation: none for runtime behavior; only documentation
-  inspection and static module creation.
+- Codex-reported validation: bounded Phase A live evidence and Phase B post-run
+  audit status are recorded in `.docs/live-validation-phase-a-2026-05-27.md`;
+  the full broader roadmap remains future-facing.
 - Inference: the capstone proof should be tiered so profile readiness, producer
   compatibility, publish/prepare/submit, runtime identity, retained result, and
   CP finalization can fail independently without widening claims.
-

@@ -1,9 +1,12 @@
 # Claims
 
-Validation status: this module is static/example-first. No ES, CP, IM, pytest,
-Go test, supported-local, Remote Alpha, Docker, Nomad, Vault, SPIRE, Temporal,
-server, setup, bringup, proof, or validation commands have been run for this
-proof module.
+Current evidence status: Codex-reported deterministic ES validation exists in
+`.docs/deterministic-validation-2026-05-27.md`, and Codex-reported Phase A live
+supporting evidence exists for ES envelope/preflight/handoff/retained-result
+references in one bounded `temporal-basic` CP Temporal normal-shell path. This
+is not a full standalone live ES module proof. The static example remains
+`validation_status: "not_run"` because it is a template, not proof evidence
+status. Independent audit and public/demo readiness are not claimed.
 
 ## Supported claims
 

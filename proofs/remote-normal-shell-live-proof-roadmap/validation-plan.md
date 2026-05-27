@@ -1,13 +1,25 @@
 # Validation Plan
 
-## Current status
+## Current evidence status
 
-Static example status: `not_run`.
+Current proof evidence:
 
-Live validation record: Codex-reported live Phase A passed; Phase B post-run
-audit ready for proof-doc update.
+- The roadmap remains broader and future-facing.
+- Phase A Codex-reported live evidence exists for one bounded Remote Alpha
+  `temporal-basic` CP Temporal normal-shell path.
+- Phase B post-run audit was ready for proof-doc update.
+- Governed lifecycle run evidence is not yet recorded in this module.
+- Support bundle: deferred.
+- Independent audit: not claimed.
+- Public/demo readiness: not claimed.
 
-This module is static proof-planning material. It was created without running
+## Static example summary status
+
+`proof-summary.example.yaml` is a static template only. It remains
+`validation_status: "not_run"` by convention and is not the proof evidence
+status.
+
+At initial static package creation, this module was created without running
 tests, scripts, servers, bringup commands, setup commands, proof commands,
 validation commands, Docker, Nomad, Vault, SPIRE, Temporal, supported-local,
 remote-alpha, or Linux-host commands.
@@ -64,7 +76,8 @@ validation is attempted.
 
 Pass interpretation:
 
-- The scenario says the proof has not run.
+- The scenario distinguishes the broader future-facing roadmap from bounded
+  Codex-reported Phase A live evidence.
 - The claims include explicit non-claims.
 - Authority labels are present for CP, AGS, ES, Nomad, Docker, SPIRE, Vault,
   and IM.
@@ -76,7 +89,8 @@ Pass interpretation:
 
 Fail interpretation:
 
-- The module implies live validation passed.
+- The module implies the full roadmap, public/demo readiness, or independent
+  audit passed.
 - The module includes real run ids, real hashes, raw generated artifact payloads,
   local absolute paths, remote filesystem paths, retained bundle contents,
   support-bundle contents, logs, traces, prompts, model outputs, or credentials.

@@ -1,8 +1,10 @@
 # Claims
 
-Validation status: static example only. The example remains `not_run`; bounded
-Codex-reported 0B and 0C status is recorded in
-`.docs/proof0-concurrency-2026-05-27.md`.
+Current evidence status: bounded Codex-reported 0B no-network plan-only evidence
+and 0C live Remote Alpha `temporal-basic` evidence are recorded in
+`.docs/proof0-concurrency-2026-05-27.md`. The static example remains
+`validation_status: "not_run"` because it is a template, not proof evidence
+status. Independent audit and public/demo readiness are not claimed.
 
 ## Supported claims
 

@@ -1,17 +1,24 @@
 # Validation Plan
 
-## Current status
+## Current evidence status
 
-Static example status: `not_run`.
+Current proof evidence:
 
-This module is static proof-planning material. It was created without running
-tests, scripts, servers, setup commands, bringup commands, proof commands,
-validation commands, supported-local commands, Remote Alpha commands, Docker,
-Nomad, Vault, SPIRE, or Temporal.
+- Codex-reported deterministic ES validation exists.
+- Codex-reported Phase A live supporting evidence exists for ES
+  envelope/preflight/handoff/retained-result references in one bounded
+  `temporal-basic` CP Temporal normal-shell path.
+- This is not a full standalone live ES module proof.
+- CP finalization remains CP-owned.
+- Independent audit: not claimed.
+- Public/demo readiness: not claimed.
 
-The static example remains `not_run`. The deterministic record below captures
-Codex-reported deterministic validation separately from the static example and
-is not live proof output.
+## Static example summary status
+
+`proof-summary.example.yaml` is a static template only. It remains
+`validation_status: "not_run"` by convention and is not the proof evidence
+status. The deterministic and supporting live records below are separate from
+the static example.
 
 ## Deterministic validation record (2026-05-27)
 
@@ -141,7 +148,9 @@ Non-claims for this tier:
 
 ## Tier 3: live or supported-local validation
 
-Live validation is out of scope for this module.
+Standalone live ES validation is out of scope for this module. Phase A/B live
+evidence is supporting evidence only, recorded separately and bounded to the
+documented CP Temporal normal-shell path.
 
 Any later live validation would need a separate owner decision, explicit
 authorization, artifact hygiene review, and clear separation between generated

@@ -1,5 +1,25 @@
 # IM Support Packet Is Evidence, Not Authority
 
+## Current evidence status
+
+Current proof evidence:
+
+- Codex-reported deterministic IM validation exists in
+  `.docs/deterministic-validation-2026-05-27.md`.
+- No IM support bundle was generated.
+- Support-bundle claims remain unvalidated.
+- Phase A/B adds limited profile/config/preflight provenance only.
+- IM evidence remains diagnostics/provenance and does not become CP run-control
+  authority or ES runtime authority.
+- Independent audit: not claimed.
+- Public/demo readiness: not claimed.
+
+## Static example summary status
+
+`proof-summary.example.yaml` is a static template only. It remains
+`validation_status: "not_run"` by convention and is not the proof evidence
+status.
+
 ## Scenario summary
 
 This proof documents the Infrastructure Manager support-packet boundary:
@@ -98,12 +118,3 @@ This proof excludes raw or sensitive generated artifact classes:
   WebAuthn, and passkey material;
 - workspaces, checkpoints, quarantines, and restores;
 - real run ids, real provider ids, real hashes, and local absolute paths.
-
-## Validation status
-
-Current status: `not_run`.
-
-No tests, scripts, servers, bringup commands, proof commands, validation
-commands, Docker, Nomad, Vault, SPIRE, Temporal, supported-local commands,
-remote-alpha commands, live host commands, or support-bundle commands were run
-to create this module.

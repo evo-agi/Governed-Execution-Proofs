@@ -2,8 +2,9 @@
 
 ## What the proof demonstrates
 
-At static-example status, Proof 0 demonstrates that the proof track has an
-authored generic parallel-proof execution and harness-isolation policy.
+With the current evidence status, Proof 0 demonstrates that the proof track has
+an authored generic parallel-proof execution and harness-isolation policy plus
+bounded Codex-reported 0B and 0C evidence.
 
 Public writing may also describe bounded Codex-reported 0B and 0C status from
 `.docs/proof0-concurrency-2026-05-27.md`: 0B as no-network plan-only

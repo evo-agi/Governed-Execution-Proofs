@@ -20,10 +20,15 @@ semantic review, checkpoint, intervention, and finalization.
 - ES result is an opaque retained-output envelope.
 - ES `authority_handoff` is non-secret runtime handoff evidence only.
 - CP owns semantic review and finalization above the ES boundary.
+- Codex-reported deterministic ES validation supports the static boundary
+  labels.
+- Codex-reported Phase A live supporting evidence exists for ES
+  envelope/preflight/handoff/retained-result references in one bounded
+  `temporal-basic` CP Temporal normal-shell path.
 
 ## What the proof does not demonstrate
 
-- live ES validation;
+- a full standalone live ES module proof;
 - production readiness;
 - provider or runtime success;
 - CP finalization proof;
@@ -93,9 +98,11 @@ Use these labels consistently:
 - "ES opaque retained output": retained bundle envelope and reference.
 - "ES non-secret handoff evidence": `authority_handoff`.
 - "CP semantic authority": review, checkpoint, intervention, and finalization.
-- "Static example": the proof-summary example in this module.
-- "Not run": every validation claim unless a later validation pass explicitly
-  records otherwise outside this static module.
+- "Static example": the proof-summary example in this module, which remains
+  `validation_status: "not_run"`.
+- "Evidence status": Codex-reported deterministic ES validation plus bounded
+  Phase A live supporting evidence, both recorded separately from the static
+  example.
 
 ## Sensitive details to omit
 
@@ -121,8 +128,9 @@ Omit:
   without absorbing semantic governance.
 - Repo-grounded evidence: cited ES and CP docs/source/tests in
   `evidence-map.md`.
-- Codex-reported validation: source inspection only; no tests or live commands
-  were run during module creation.
+- Codex-reported validation: deterministic ES validation is recorded in
+  `.docs/deterministic-validation-2026-05-27.md`; Phase A live supporting
+  evidence is recorded in `.docs/live-validation-phase-a-2026-05-27.md`.
 - Inference: this scenario is useful because it shows the whole ES envelope
   crossing CP consumption boundaries while keeping finalization semantics owned
   by CP.

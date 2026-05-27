@@ -11,6 +11,11 @@ SPIRE, Temporal server, bringup, setup, proof, or validation commands were run.
 
 Any future live run requires explicit operator authorization.
 
+Historical/as-of note: this plan predates the bounded Phase A live ledger in
+`.docs/live-validation-phase-a-2026-05-27.md`. Treat this file as the planning
+baseline; current proof evidence status is carried by the later ledger and the
+module validation-plan records, not by this plan-only status line.
+
 ## Scope
 
 This plan covers the next validation phase for
