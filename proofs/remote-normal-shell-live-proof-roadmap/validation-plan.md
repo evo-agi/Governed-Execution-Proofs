@@ -85,8 +85,8 @@ producer compatibility plus AGS publish and ES prepare/submit/status/result
 evidence existed by safe metadata, retained-result/materialization refs existed
 by metadata, and CP review/finalization refs existed.
 
-The record supports filming preparation for the governed execution lifecycle
-screen story. It does not complete the full future-facing roadmap, does not
+The record supports the bounded serial governed execution lifecycle proof
+status. It does not complete the full future-facing roadmap, does not
 claim runtime identity/Vault credential success, does not claim support-bundle
 generation, does not claim independent audit, and is not public/demo readiness
 by itself.

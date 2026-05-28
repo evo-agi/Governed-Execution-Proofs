@@ -29,9 +29,7 @@ status.
 This module turns the governed execution lifecycle proof from top-level authored
 documentation into a first-class proof package. It points to the lifecycle
 ledger in `.docs/governed-lifecycle-proof-2026-05-28.md` without importing raw
-generated artifacts. Recording-package material now lives in
-`Governed Execution MVP Filming Preparation/.docs/`; the proof-repo
-`.docs/governed-lifecycle-filming-script.md` file is a pointer.
+generated artifacts.
 
 The scenario is the CP/Temporal -> ES -> Nomad/Linux lifecycle narrative for one
 bounded `temporal-basic` normal-shell path:

@@ -12,8 +12,8 @@ workflow and finalization. AGS and ES own publication, admission, submission,
 runtime projection, retained opaque outputs, and bounded handoff evidence. IM
 owns readiness and diagnostics only. Runtime identity and Vault credential
 success must be validated before being claimed. A separate Codex-reported
-two-pass lifecycle ledger now supports filming preparation for the governed
-execution lifecycle story, but it is not public/demo readiness by itself.
+two-pass lifecycle ledger records a bounded serial governed execution lifecycle
+condition, but it is not public/demo readiness by itself.
 
 ## What the future proof should demonstrate
 
@@ -73,8 +73,8 @@ credentials.
   proof."
 - "The broader roadmap proof has not fully run; bounded Phase A live evidence has
   been recorded separately."
-- "A Codex-reported two-pass governed lifecycle ledger supports filming
-  preparation for a bounded serial temporal-basic lifecycle story."
+- "A Codex-reported two-pass governed lifecycle ledger records a bounded serial
+  temporal-basic lifecycle condition."
 - "Control Plane owns workflow state, review, checkpoint, intervention, and
   finalization."
 - "ES owns admission, submit handoff, lifecycle projection, retained opaque

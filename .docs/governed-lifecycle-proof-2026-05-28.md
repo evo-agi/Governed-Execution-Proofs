@@ -28,8 +28,7 @@ The scope includes:
   finalization evidence by safe metadata;
 - ES producer contract, prepare/admission, submit handoff, lifecycle/status,
   result, retained-result, and runtime handoff evidence by safe metadata;
-- local Temporal harness readiness/setup lessons from blocked rehearsals;
-- filming readiness for a sanitized demo of the governed execution lifecycle.
+- local Temporal harness readiness/setup lessons from blocked rehearsals.
 
 The scope excludes cancel, failure, intervention, hold/resume/reject,
 compare/experiment/wrapper modes, Proof 0 concurrency, IM support bundles,
@@ -163,7 +162,7 @@ This Codex-reported ledger supports these bounded claims:
   materialization evidence, and CP review/finalization evidence by safe
   metadata;
 - the two-pass checklist for the bounded serial governed execution lifecycle is
-  complete for filming preparation.
+  complete for the recorded proof scope.
 
 ## Claims Not Supported
 
@@ -208,26 +207,13 @@ authority. ES lifecycle/status/result evidence does not become CP finalization.
 IM profile/readiness material does not become CP run-control truth or ES runtime
 truth.
 
-## Filming Readiness Assessment
+## Bounded Proof Status Assessment
 
-The two-pass lifecycle condition is complete for filming preparation.
+The two-pass lifecycle condition is complete for the bounded serial
+`temporal-basic` proof scope.
 
-Visible fields exist for a sanitized recording:
-
-- run id;
-- `final_result`;
-- `requested_mode`;
-- stage statuses;
-- Temporal readiness/history booleans;
-- workflow start/completion booleans;
-- producer contract compatibility;
-- prepare/admission status;
-- submit/status/result evidence-present booleans;
-- retained-result/materialization/finalization refs present by metadata only;
-- CP review/finalization status.
-
-This is not public/demo readiness by itself. Final public/demo readiness still
-requires the final demo-readiness audit.
+This is not public/demo readiness by itself. Broader external, readiness, or
+audit claims require separate review.
 
 ## Sensitive/Raw-Excluded Artifacts
 
@@ -247,16 +233,13 @@ Do not commit, quote, screen-share, or narrate these raw classes:
 - local process records.
 
 Use only safe metadata, boolean presence fields, classifications, and path
-classes in proof documentation and filming material.
+classes in proof documentation.
 
 ## Follow-Up Gates
 
-Before publication or public demo:
+Before broader claims:
 
-- run the final demo-readiness audit;
-- verify the filming script against this ledger's supported claims and
-  non-claims;
 - keep proof-summary examples at `validation_status: "not_run"`;
 - keep raw generated artifacts out of the proof repo;
-- repeat redaction and wording scans after any script or screen-plan changes;
+- repeat redaction and wording scans after claim or evidence-summary changes;
 - obtain independent audit before making any independent-audit claim.

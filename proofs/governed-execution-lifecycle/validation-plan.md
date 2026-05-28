@@ -7,8 +7,8 @@ Current evidence status: Codex-reported two-pass lifecycle condition recorded.
 The evidence is recorded in `.docs/governed-lifecycle-proof-2026-05-28.md` and
 is reflected in the broader remote normal-shell roadmap validation plan. The
 recorded lifecycle evidence is bounded to two serial `temporal-basic`
-happy-path rehearsals and supports the governed execution lifecycle filming
-story. It is not independent audit and is not public/demo readiness by itself.
+happy-path rehearsals and supports the governed execution lifecycle proof
+status. It is not independent audit and is not public/demo readiness by itself.
 
 ## Static example summary status
 

@@ -185,8 +185,8 @@ Security/redaction status is bounded. The audit used safe generated summaries,
 plans, manifests, and metadata only. Raw artifacts are not committed here, and
 no sensitive payloads are quoted in this ledger.
 
-Any future publication or demo material needs a separate redaction review and
-must preserve the evidence/projection/diagnostics label.
+Any future external-facing material needs a separate redaction review and must
+preserve the evidence/projection/diagnostics label.
 
 ## Follow-Up Gates
 
@@ -198,13 +198,13 @@ Future continuations should record explicit leases, expected artifact classes,
 raw-excluded roots, redaction requirements, supported claims, non-claims, and
 the authority owner for each boundary.
 
-## Relationship To Governed Lifecycle Filming Proof
+## Relationship To Governed Lifecycle Proof
 
-Proof 0 can inform a governed lifecycle filming proof by defining when parallel
-proof writers are allowed and what each writer must lease. It does not itself
-prove the governed lifecycle filming proof, public/demo readiness, production
-operation, or product HA/multi-tenancy/scale.
+Proof 0 can inform a governed lifecycle proof by defining when parallel proof
+writers are allowed and what each writer must lease. It does not itself prove
+the governed lifecycle proof, public/demo readiness, production operation, or
+product HA/multi-tenancy/scale.
 
-If lifecycle filming needs any proof class beyond the confirmed CP to ES
+If lifecycle proof work needs any proof class beyond the confirmed CP to ES
 `temporal-basic` shape, request a Proof 0 continuation before running parallel
 live proof writers.

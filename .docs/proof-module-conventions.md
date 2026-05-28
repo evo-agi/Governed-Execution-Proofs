@@ -33,13 +33,11 @@ production readiness.
 
 `proofs/governed-execution-lifecycle/` is the first-class module for the
 Codex-reported governed execution lifecycle ledger recorded in
-`.docs/governed-lifecycle-proof-2026-05-28.md`. Recording-package material now
-lives in `Governed Execution MVP Filming Preparation/.docs/`, and the
-proof-repo `.docs/governed-lifecycle-filming-script.md` file is a pointer. The
-module may reference the two bounded serial `temporal-basic` run ids and safe
-metadata status from the ledger, but it must not import raw generated artifacts,
-raw summaries, reports, logs, traces, retained payloads, prompts, model outputs,
-workspaces, databases, credentials, endpoint values, or local process records.
+`.docs/governed-lifecycle-proof-2026-05-28.md`. The module may reference the two
+bounded serial `temporal-basic` run ids and safe metadata status from the
+ledger, but it must not import raw generated artifacts, raw summaries, reports,
+logs, traces, retained payloads, prompts, model outputs, workspaces, databases,
+credentials, endpoint values, or local process records.
 
 The module keeps happy-path-twice as Codex-reported lifecycle evidence, not
 independent audit and not public/demo readiness. Runtime identity/Vault,
@@ -55,10 +53,9 @@ A module may contain:
 - `evidence-map.md`
 - `proof-summary.example.yaml`
 - `validation-plan.md`
-- `public-writing-map.md`
 
-Those files are authored documentation. They are not product runtime code,
-schemas, scripts, tests, or generated proof output.
+Those files are authored documentation when present. They are not product
+runtime code, schemas, scripts, tests, or generated proof output.
 
 ## Static/example-first default
 

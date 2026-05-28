@@ -36,9 +36,9 @@ This module may make these narrow claims:
   from committed proof material.
 - The machine-readable example in this module is synthetic and may be used only
   as a schema-shaped planning example.
-- The Codex-reported two-pass lifecycle ledger supports filming preparation for
-  a bounded serial `temporal-basic` governed execution lifecycle story, with
-  ES contract/prepare/submit/status/result evidence and CP
+- The Codex-reported two-pass lifecycle ledger supports a bounded serial
+  `temporal-basic` governed execution lifecycle proof status, with ES
+  contract/prepare/submit/status/result evidence and CP
   review/finalization evidence described by safe metadata only.
 
 ## Explicit non-claims
