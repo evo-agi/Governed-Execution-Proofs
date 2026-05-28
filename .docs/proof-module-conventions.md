@@ -139,6 +139,25 @@ Validation records must never convert validation output, generated artifacts,
 reports, traces, support bundles, retained bundles, profiles, logs, or `.out`
 material into authority.
 
+## Lifecycle ledgers
+
+Authored lifecycle ledgers under `.docs/` may record Codex-reported run ids,
+bounded result labels, and proof-local path classes when an operator explicitly
+asks for traceable lifecycle proof history. Those ledgers remain authored
+documentation, not generated proof output.
+
+Lifecycle ledgers may cite path classes such as `.out/<run_id>/` or
+`.out/temporal/...` only as metadata and redaction guidance. They must not copy
+raw generated artifacts, raw summaries, raw reports, raw logs, raw traces,
+retained bundle payloads, raw prompts, raw model outputs, workspaces, databases,
+credentials, key/certificate material, endpoint values, or local process
+records.
+
+Lifecycle ledgers must say whether the evidence is Codex-reported or
+independently inspected, must preserve CP/ES/IM authority boundaries, and must
+state when public/demo readiness is not claimed. They do not change static
+`proof-summary.example.yaml` files, which remain `validation_status: "not_run"`.
+
 ## Local checker scope
 
 Local checkers in this repo are linting tools only. They do not run product

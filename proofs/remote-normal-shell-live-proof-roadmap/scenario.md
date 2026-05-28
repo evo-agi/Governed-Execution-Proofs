@@ -7,8 +7,9 @@ Current proof evidence:
 - The roadmap remains broader and future-facing.
 - Phase A Codex-reported live evidence exists for one bounded Remote Alpha
   `temporal-basic` CP Temporal normal-shell path.
-- Phase B post-run audit was ready for proof-doc update.
-- Governed lifecycle run evidence is not yet recorded in this module.
+- Phase B post-run audit is recorded separately.
+- Codex-reported two-pass governed lifecycle evidence is recorded in
+  `.docs/governed-lifecycle-proof-2026-05-28.md`.
 - Support bundle: deferred.
 - Independent audit: not claimed.
 - Public/demo readiness: not claimed.
@@ -23,8 +24,8 @@ status.
 
 This module defines the broader future capstone proof package for the remote
 Linux host path. It is a roadmap and validation contract with bounded Phase A
-live evidence recorded separately; it does not claim that the full roadmap proof
-has already run.
+live evidence and a Codex-reported two-pass lifecycle ledger recorded
+separately; it does not claim that the full roadmap proof has already run.
 
 The future proof is expected to cover one bounded, opt-in Control Plane
 normal-shell task attempt through the remote governed-execution path:

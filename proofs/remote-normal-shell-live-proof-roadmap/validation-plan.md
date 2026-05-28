@@ -7,8 +7,9 @@ Current proof evidence:
 - The roadmap remains broader and future-facing.
 - Phase A Codex-reported live evidence exists for one bounded Remote Alpha
   `temporal-basic` CP Temporal normal-shell path.
-- Phase B post-run audit was ready for proof-doc update.
-- Governed lifecycle run evidence is not yet recorded in this module.
+- Phase B post-run audit is recorded separately.
+- Codex-reported two-pass governed lifecycle evidence is recorded in
+  `.docs/governed-lifecycle-proof-2026-05-28.md`.
 - Support bundle: deferred.
 - Independent audit: not claimed.
 - Public/demo readiness: not claimed.
@@ -52,8 +53,8 @@ before proof claims are updated.
 
 ## Phase A/B live validation record (2026-05-27)
 
-Status: Codex-reported live Phase A passed; Phase B post-run audit ready for
-proof-doc update.
+Status: Codex-reported live Phase A passed; Phase B post-run audit recorded in
+the proof repo.
 
 Reference: `.docs/live-validation-phase-a-2026-05-27.md`.
 
@@ -64,6 +65,31 @@ metadata, and artifact classes.
 
 Support bundle remains deferred. Raw artifacts remain excluded. Public/demo
 readiness remains unclaimed.
+
+This record does not change the static `proof-summary.example.yaml`, which
+remains `validation_status: "not_run"` because it is an example, not generated
+run output.
+
+## Governed lifecycle two-pass record (2026-05-28)
+
+Status: Codex-reported bounded serial governed execution lifecycle condition
+recorded.
+
+Reference: `.docs/governed-lifecycle-proof-2026-05-28.md`.
+
+The lifecycle ledger records two serial `temporal-basic` happy-path rehearsals.
+Both are Codex-reported as `proof_passed`. The second rehearsal records that the
+Temporal DB path class was outside the validation run root, all stages passed,
+Temporal readiness/history and workflow start/completion were observed, ES
+producer compatibility plus AGS publish and ES prepare/submit/status/result
+evidence existed by safe metadata, retained-result/materialization refs existed
+by metadata, and CP review/finalization refs existed.
+
+The record supports filming preparation for the governed execution lifecycle
+screen story. It does not complete the full future-facing roadmap, does not
+claim runtime identity/Vault credential success, does not claim support-bundle
+generation, does not claim independent audit, and is not public/demo readiness
+by itself.
 
 This record does not change the static `proof-summary.example.yaml`, which
 remains `validation_status: "not_run"` because it is an example, not generated

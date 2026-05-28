@@ -1,10 +1,11 @@
 # Claims
 
 Current evidence status: this module remains a broader future-facing roadmap,
-while Phase A Codex-reported live evidence and a Phase B post-run audit ready for
-proof-doc update are recorded in `.docs/live-validation-phase-a-2026-05-27.md`.
-Governed lifecycle run evidence is not yet recorded in this module. Support
-bundle generation is deferred. The static example remains
+while Phase A Codex-reported live evidence and a Phase B post-run audit are
+recorded in `.docs/live-validation-phase-a-2026-05-27.md`, and Codex-reported
+two-pass governed lifecycle evidence is recorded in
+`.docs/governed-lifecycle-proof-2026-05-28.md`. Support bundle generation is
+deferred. The static example remains
 `validation_status: "not_run"` because it is a template, not proof evidence
 status. Independent audit and public/demo readiness are not claimed.
 
@@ -35,6 +36,10 @@ This module may make these narrow claims:
   from committed proof material.
 - The machine-readable example in this module is synthetic and may be used only
   as a schema-shaped planning example.
+- The Codex-reported two-pass lifecycle ledger supports filming preparation for
+  a bounded serial `temporal-basic` governed execution lifecycle story, with
+  ES contract/prepare/submit/status/result evidence and CP
+  review/finalization evidence described by safe metadata only.
 
 ## Explicit non-claims
 
@@ -48,7 +53,8 @@ This module must not claim:
 - remote provisioning, remote SSH install automation, or a remote reconciler;
 - remote Control Plane deployment;
 - a default-path flip from local shell to remote normal shell;
-- live governed execution success;
+- full-roadmap live governed execution success beyond the Codex-reported
+  two-pass lifecycle ledger;
 - AGS publish success;
 - ES prepare or submit success;
 - Nomad placement success;
@@ -65,6 +71,8 @@ This module must not claim:
 - proof-harness behavior as product architecture;
 - generated artifacts, reports, traces, logs, support bundles, retained bundles,
   or profiles as orchestration authority.
+- public/demo readiness from the lifecycle ledger by itself;
+- independent audit from Codex-reported lifecycle evidence.
 
 ## Authority owners
 

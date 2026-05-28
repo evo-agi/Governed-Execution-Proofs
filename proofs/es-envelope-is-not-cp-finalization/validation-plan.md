@@ -8,6 +8,8 @@ Current proof evidence:
 - Codex-reported Phase A live supporting evidence exists for ES
   envelope/preflight/handoff/retained-result references in one bounded
   `temporal-basic` CP Temporal normal-shell path.
+- Codex-reported two-pass governed lifecycle supporting evidence exists for the
+  same authority split by safe metadata.
 - This is not a full standalone live ES module proof.
 - CP finalization remains CP-owned.
 - Independent audit: not claimed.
@@ -73,6 +75,20 @@ This note does not change ES authority boundaries. ES contract, preflight,
 handoff, lifecycle/status/result, and retained-result references remain ES
 evidence/projection and do not become CP semantic finalization. This note also
 does not prove production or runtime health generally.
+
+## Governed lifecycle supporting evidence note (2026-05-28)
+
+Reference: `.docs/governed-lifecycle-proof-2026-05-28.md`.
+
+The two-pass lifecycle ledger provides Codex-reported supporting evidence that
+ES producer compatibility, AGS publish, ES prepare, ES submit/status/result
+evidence, retained-result refs, and materialization refs were present by safe
+metadata in a bounded serial `temporal-basic` lifecycle rehearsal pair.
+
+This note does not turn ES evidence/projection into CP semantic finalization.
+CP review/finalization remains CP-owned, the static example remains
+`validation_status: "not_run"`, and independent audit plus public/demo
+readiness remain unclaimed.
 
 ## Tier 1: static/example fixture
 

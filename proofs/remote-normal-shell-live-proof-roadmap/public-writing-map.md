@@ -11,7 +11,9 @@ of authority handoffs, not as a vague "remote run worked" claim. CP owns the
 workflow and finalization. AGS and ES own publication, admission, submission,
 runtime projection, retained opaque outputs, and bounded handoff evidence. IM
 owns readiness and diagnostics only. Runtime identity and Vault credential
-success must be validated before being claimed.
+success must be validated before being claimed. A separate Codex-reported
+two-pass lifecycle ledger now supports filming preparation for the governed
+execution lifecycle story, but it is not public/demo readiness by itself.
 
 ## What the future proof should demonstrate
 
@@ -71,6 +73,8 @@ credentials.
   proof."
 - "The broader roadmap proof has not fully run; bounded Phase A live evidence has
   been recorded separately."
+- "A Codex-reported two-pass governed lifecycle ledger supports filming
+  preparation for a bounded serial temporal-basic lifecycle story."
 - "Control Plane owns workflow state, review, checkpoint, intervention, and
   finalization."
 - "ES owns admission, submit handoff, lifecycle projection, retained opaque
@@ -144,7 +148,9 @@ Use these labels consistently:
   `evidence-map.md`.
 - Codex-reported validation: bounded Phase A live evidence and Phase B post-run
   audit status are recorded in `.docs/live-validation-phase-a-2026-05-27.md`;
-  the full broader roadmap remains future-facing.
+  a Codex-reported two-pass governed lifecycle ledger is recorded in
+  `.docs/governed-lifecycle-proof-2026-05-28.md`; the full broader roadmap
+  remains future-facing.
 - Inference: the capstone proof should be tiered so profile readiness, producer
   compatibility, publish/prepare/submit, runtime identity, retained result, and
   CP finalization can fail independently without widening claims.
