@@ -127,6 +127,7 @@ Use these labels consistently:
   `evidence-map.md`.
 - Codex-reported validation: deterministic CP stale-action validation is recorded
   in `.docs/deterministic-validation-2026-05-27.md`.
-- Inference: this scenario is the smallest first proof because
-  `cancel-current-attempt` has direct stale rejection plus fresh guarded cancel
-  evidence without proving all intervention verbs.
+- Inference: this remains a small authority-drift proof for the article track
+  because `cancel-current-attempt` has direct stale rejection plus fresh guarded
+  cancel evidence without proving all intervention verbs. It is not the current
+  first proof in the governed lifecycle demo track.
