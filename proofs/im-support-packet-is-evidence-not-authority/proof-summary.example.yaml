@@ -1,0 +1,166 @@
+# Static example only. This file is not live output, not validation output,
+# not a generated artifact, not a copied support bundle, and not product
+# architecture.
+schema_version: "governed-execution-proof-summary.v1"
+scenario_id: "im-support-packet-is-evidence-not-authority"
+proof_mode: "static_example"
+source_material: "static_example_not_runtime_output"
+id_classification: "synthetic_example"
+validation_status: "not_run"
+validation_evidence: []
+
+support_packet:
+  packet_id: "example-support-packet-id"
+  collection_mode: "static_example_not_collected"
+  live_support_bundle_generated: false
+  raw_support_bundle_copied: false
+  live_host_contacted: false
+  remote_alpha_live_refresh_run: false
+  support_bundle_command_run: false
+  generated_artifact_payloads_included: false
+  raw_artifact_payloads_included: false
+
+example_profile_context:
+  profile_id: "example-remote-alpha-profile-id"
+  profile_schema: "control-plane.remote-supported-host-profile.v1"
+  topology_kind: "remote-supported-host-alpha"
+  alpha: "0.3"
+  runtime_profile: "control-plane-normal-shell/v1"
+  classification: "im_profile_provenance_only"
+  run_control_authority: false
+  es_runtime_authority: false
+  remote_host_provisioning: false
+  long_lived_reconciler: false
+
+example_readiness_context:
+  readiness_report_schema: "remote-supported-host.alpha-readiness-report.v1"
+  acceptance_posture_example: "not_proven_yet"
+  classification: "pre_live_operator_evidence_only"
+  remote_alpha_production_readiness_claimed: false
+  governed_execution_proof_claimed: false
+  cp_run_control_authority: false
+  es_runtime_authority: false
+
+example_bundle_context:
+  support_bundle_schema: "remote-supported-host.support-bundle.v1"
+  redaction_report_schema: "remote-supported-host.support-bundle-redaction-report.v1"
+  bundle_ref: "example-bundle-ref-not-real"
+  digest_example: "sha256:example-digest-not-real"
+  classification: "support_packet_evidence_only"
+  digest_identity_primary: true
+  path_identity_secondary: true
+  support_bundle_authority: false
+  collection_changed_live_host_posture: false
+  collection_triggered_refresh_or_proof: false
+
+authority_labels:
+  - owner: "Control Plane"
+    label: "CP authority"
+    facts:
+      - "workflow/query state"
+      - "guarded operator writes"
+      - "run-control actionability"
+      - "intervention receipts and durable workflow-owned history"
+  - owner: "Execution Substrate"
+    label: "ES runtime boundary"
+    facts:
+      - "admission and prepare/submit handoff"
+      - "runtime-profile compatibility"
+      - "lifecycle projection"
+      - "cancel/result/log evidence"
+      - "retained opaque bundles"
+  - owner: "Infrastructure Manager"
+    label: "IM provenance/diagnostics"
+    facts:
+      - "profile emission"
+      - "doctor vocabulary"
+      - "readiness summaries"
+      - "support-bundle assembly"
+      - "redaction and digest manifesting"
+  - owner: "Support packet"
+    label: "evidence packet only"
+    facts:
+      - "copied summary refs"
+      - "redaction summary"
+      - "digest identity evidence"
+      - "non-authority labels"
+
+claims_supported:
+  - "IM support outputs explain environment provenance and diagnostics only"
+  - "support-packet digest values identify copied summary artifacts only"
+  - "redaction and deny scan are shareability guardrails only"
+  - "CP workflow/query state remains run-control authority"
+  - "ES runtime semantics remain under ES-owned contracts"
+
+claims_not_supported:
+  - "live support bundle generated"
+  - "raw support bundle copied"
+  - "Remote Alpha production readiness"
+  - "CP run-control authority from IM evidence"
+  - "ES runtime authority from IM evidence"
+  - "provisioning or reconciler behavior"
+  - "live host contact"
+  - "support-bundle authority"
+  - "live readiness refresh"
+  - "governed live job proof"
+  - "CP proof pass"
+  - "ES proof pass"
+  - "live ES execution"
+  - "runtime identity or Vault credential success"
+  - "retained-bundle semantics"
+  - "browser, WebAuthn, or passkey proof"
+
+excluded_artifact_classes:
+  - ".out contents"
+  - "raw support bundles"
+  - "raw retained bundles"
+  - "raw logs"
+  - "raw reports"
+  - "raw traces"
+  - "raw prompts"
+  - "raw model outputs"
+  - "raw review or audit payloads"
+  - "archives"
+  - "databases"
+  - "environment files"
+  - "key/cert material"
+  - "TLS/SPIFFE/Vault/WebAuthn/passkey material"
+  - "API keys and bearer material"
+  - "workspaces"
+  - "checkpoints"
+  - "quarantines and restores"
+  - "local process records"
+  - "real run ids"
+  - "real provider ids"
+  - "real hashes"
+  - "local absolute paths"
+
+evidence_anchors:
+  component_label_namespace: "static_example_component_labels_only"
+  evidence_reference_note: "Component labels identify adjacent repo authored text/source/test anchors. They are not artifact refs, live outputs, support bundle paths, authority claims, or local absolute paths."
+  refs:
+    - "Infrastructure Manager: README.md:3-9"
+    - "Infrastructure Manager: .docs/architecture.md:49-71"
+    - "Infrastructure Manager: .docs/commands.md:224-279"
+    - "Infrastructure Manager: .docs/supported-local-operator-runbook.md:10-43"
+    - "Infrastructure Manager: .docs/remote-supported-host-alpha.md:5-35"
+    - "Infrastructure Manager: .docs/remote-supported-host-support-bundle.md:6-25"
+    - "Infrastructure Manager: src/infra_manager/emitters/remote_support_bundle.py:181-210"
+    - "Infrastructure Manager: src/infra_manager/emitters/remote_alpha_readiness_report.py:213-223"
+    - "Infrastructure Manager: tests/test_remote_profile_emission.py:83-103"
+    - "Infrastructure Manager: tests/test_remote_alpha_readiness_report.py:64-67"
+    - "Infrastructure Manager: tests/test_remote_support_bundle.py:126-132"
+    - "Infrastructure Manager: tests/test_remote_alpha_live_support_bundle.py:211-214"
+    - "Control Plane: .docs/long-running-operator-mode-contract.md:282-310"
+    - "Control Plane: .docs/execution-substrate-integration.md:140-156"
+    - "Execution Substrate: .docs/mvp.md:62-68"
+    - "Execution Substrate: .docs/system_overview/boundaries.md:432-448"
+
+sensitive_exclusion_summary:
+  raw_sensitive_payloads_included: false
+  generated_artifact_payloads_included: false
+  real_run_ids_included: false
+  real_provider_ids_included: false
+  real_hashes_included: false
+  local_absolute_paths_included: false
+  credential_material_included: false

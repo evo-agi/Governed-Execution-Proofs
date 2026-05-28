@@ -1,0 +1,170 @@
+# Static example only. This file is a template, not run output, not validation
+# output, not a generated artifact, and not product architecture.
+schema_version: "governed-execution-proof-summary.v1"
+scenario_id: "governed-execution-lifecycle"
+proof_mode: "static_example"
+source_material: "template_not_runtime_output"
+id_classification: "synthetic_placeholders"
+validation_status: "not_run"
+
+evidence_status_references:
+  - ".docs/governed-lifecycle-proof-2026-05-28.md"
+  - "proofs/governed-execution-lifecycle/evidence-map.md"
+  - "proofs/remote-normal-shell-live-proof-roadmap/validation-plan.md"
+  - ".docs/proof-module-conventions.md"
+
+run_id_placeholders:
+  first_lifecycle_run_id: "example-first-governed-lifecycle-run-id-not-real"
+  second_lifecycle_run_id: "example-second-governed-lifecycle-run-id-not-real"
+  control_plane_run_id: "example-cp-run-id-not-real"
+  execution_substrate_run_id: "example-es-run-id-not-real"
+  provider_run_id: "example-provider-run-id-not-real"
+
+scenario_scope:
+  lifecycle_path: "cp_temporal_to_es_to_nomad_linux"
+  requested_mode: "temporal_basic_example"
+  proof_evidence_status: "codex_reported_two_pass_condition_recorded_elsewhere"
+  template_status: "static_example_only"
+  happy_path_twice_recorded_elsewhere: true
+  independent_audit_claimed: false
+  public_demo_readiness_claimed: false
+  live_run_authorized_by_this_template: false
+
+stage_metadata_placeholders:
+  - stage: "cp_temporal_workflow"
+    owner: "Control Plane"
+    authority_label: "cp_workflow_authority"
+    evidence_label: "workflow_history_metadata_placeholder"
+    validation_status: "not_run"
+  - stage: "es_prepare"
+    owner: "Execution Substrate"
+    authority_label: "es_admission_preflight"
+    evidence_label: "prepare_metadata_placeholder"
+    validation_status: "not_run"
+  - stage: "es_submit"
+    owner: "Execution Substrate"
+    authority_label: "es_submit_handoff"
+    evidence_label: "submit_metadata_placeholder"
+    validation_status: "not_run"
+  - stage: "nomad_linux_lifecycle"
+    owner: "Runtime boundary"
+    authority_label: "runtime_execution_boundary"
+    evidence_label: "lifecycle_projection_placeholder"
+    validation_status: "not_run"
+  - stage: "es_result_retention"
+    owner: "Execution Substrate"
+    authority_label: "es_retained_result_reference"
+    evidence_label: "result_metadata_placeholder"
+    validation_status: "not_run"
+  - stage: "cp_materialization_finalization"
+    owner: "Control Plane"
+    authority_label: "cp_semantic_finalization"
+    evidence_label: "materialization_finalization_metadata_placeholder"
+    validation_status: "not_run"
+
+claims_supported:
+  - "two bounded serial governed lifecycle rehearsals completed"
+  - "CP Temporal workflow/history evidence exists by safe metadata"
+  - "ES prepare/submit/lifecycle/result metadata exists"
+  - "retained-result materialization and CP finalization metadata exist"
+
+claims_not_supported:
+  - "production readiness"
+  - "HA"
+  - "multi-tenancy"
+  - "general remote deployment"
+  - "cancel/failure/intervention behavior"
+  - "runtime identity/Vault credential success as a dedicated proof"
+  - "IM support-bundle proof"
+  - "independent audit"
+  - "public/demo readiness by itself"
+  - "support-bundle authority"
+  - "retained bundle semantic finalization by ES"
+
+artifact_classes:
+  included:
+    - "authored docs"
+    - "run id placeholders"
+    - "safe metadata placeholders"
+    - "path-class references only"
+  excluded:
+    - "raw generated artifact contents"
+    - "raw summary JSON"
+    - "raw Markdown reports"
+    - "raw logs"
+    - "raw traces"
+    - "retained bundle payloads"
+    - "support bundle payloads"
+    - "databases"
+    - "workspaces"
+    - "credentials"
+    - "endpoint values"
+    - "local process records"
+
+redaction_requirements:
+  raw_generated_payloads_included: false
+  raw_summary_json_included: false
+  raw_reports_included: false
+  raw_logs_included: false
+  raw_traces_included: false
+  retained_bundle_payloads_included: false
+  support_bundle_payloads_included: false
+  credentials_included: false
+  local_absolute_paths_included: false
+  endpoint_values_included: false
+
+authority_labels:
+  - owner: "Control Plane"
+    label: "cp_authority"
+    facts:
+      - "Temporal workflow state"
+      - "review"
+      - "materialization"
+      - "finalization"
+  - owner: "Execution Substrate"
+    label: "es_authority"
+    facts:
+      - "prepare/admission"
+      - "submit handoff"
+      - "lifecycle projection"
+      - "result metadata"
+      - "retained-result references"
+  - owner: "Infrastructure Manager"
+    label: "im_diagnostics_only"
+    facts:
+      - "profile/readiness/provenance/support evidence when separately run"
+
+non_authority_labels:
+  proof_summary: "static_template_only"
+  generated_outputs: "evidence_projection_diagnostics_only"
+  es_lifecycle_result_metadata: "not_cp_finalization"
+  retained_result_refs: "metadata_only_until_cp_review"
+  im_support_bundle: "diagnostics_only_not_authority"
+
+excluded_artifact_classes:
+  - ".out contents"
+  - "raw generated artifact contents"
+  - "raw summary JSON"
+  - "raw Markdown reports"
+  - "raw logs"
+  - "raw traces"
+  - "retained bundles"
+  - "support bundles"
+  - "archives"
+  - "databases"
+  - "environment files"
+  - "key material"
+  - "certificate bodies"
+  - "TLS material"
+  - "SPIFFE material"
+  - "Vault material"
+  - "WebAuthn or passkey material"
+  - "API keys"
+  - "bearer material"
+  - "raw prompts"
+  - "raw model outputs"
+  - "workspaces"
+  - "checkpoints"
+  - "quarantines"
+  - "restores"
+  - "local process records"

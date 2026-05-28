@@ -1,0 +1,132 @@
+# Static example only. This file is not live output, not validation output,
+# not a generated artifact, and not product architecture.
+schema_version: "governed-execution-proof-summary.v1"
+scenario_id: "concurrency-harness-isolation"
+proof_mode: "static_example"
+source_material: "static_example_not_runtime_output"
+id_classification: "synthetic_example"
+validation_status: "not_run"
+validation_evidence: []
+
+scenario_name: "Proof 0 Parallel Proof Harness Isolation"
+proof_number: "0"
+proof_tracks:
+  - "0A commit only"
+  - "0B local no-network harness isolation"
+  - "0C live two-run Remote Alpha temporal-basic"
+
+authority_labels:
+  - owner: "Control Plane"
+    label: "cp_workflow_and_run_control_authority"
+    facts:
+      - "workflow state"
+      - "Temporal shell state"
+      - "review"
+      - "checkpoint"
+      - "escalation"
+      - "finalization"
+      - "operator semantics"
+  - owner: "Execution Substrate"
+    label: "es_runtime_boundary_authority"
+    facts:
+      - "admission"
+      - "submission handoff"
+      - "lifecycle projection"
+      - "retained opaque results"
+      - "runtime handoff"
+  - owner: "Infrastructure Manager"
+    label: "im_diagnostics_and_provenance"
+    facts:
+      - "readiness"
+      - "profile"
+      - "provenance"
+      - "diagnostics"
+      - "support evidence"
+
+evidence_projection_labels:
+  validation_outputs: "evidence_projection_diagnostics_only"
+  reports: "evidence_projection_only"
+  traces: "evidence_projection_only"
+  support_bundles: "diagnostics_only"
+  retained_bundles: "opaque_es_evidence_only"
+  profiles: "provenance_only"
+  local_proof_outputs: "evidence_projection_only"
+
+isolation_surfaces:
+  - "proof run id"
+  - "validation output root"
+  - "Control Plane execution run root"
+  - "report root and report index"
+  - "SQLite database path"
+  - "Temporal target"
+  - "Temporal namespace"
+  - "Temporal workflow task queue"
+  - "Temporal workspace task queue"
+  - "Temporal dev-server database path"
+  - "fake-model provider URL"
+  - "attempt-manifest path"
+  - "finalization path"
+
+claims_supported:
+  - "Proof 0 static module exists"
+  - "generic parallel-proof isolation policy is documented"
+  - "harness-owned lease surfaces are explicitly identified"
+  - "Control Plane, Execution Substrate, and Infrastructure Manager authority boundaries are labeled"
+  - "generated artifacts and validation outputs remain evidence/projection/diagnostics only"
+
+claims_not_supported:
+  - "this static example is validation output"
+  - "Proof 0 independently inspected passed"
+  - "live Temporal behavior beyond bounded Codex-reported 0C ledger scope"
+  - "supported-local behavior beyond bounded Codex-reported 0C ledger scope"
+  - "Remote Alpha behavior beyond bounded Codex-reported 0C ledger scope"
+  - "Linux-host behavior"
+  - "Docker/Nomad/Vault/SPIRE behavior"
+  - "fake-model service behavior"
+  - "ES runtime success"
+  - "provider success"
+  - "general parallel proof coverage"
+  - "default shared-config safety"
+  - "all interleavings"
+  - "production readiness"
+  - "high availability"
+  - "multi-tenancy"
+  - "public/demo readiness"
+  - "independent audit"
+
+sensitive_exclusion_summary:
+  raw_sensitive_payloads_included: false
+  generated_artifact_payloads_included: false
+  retained_bundle_payload_included: false
+  support_bundle_payload_included: false
+  raw_logs_included: false
+  raw_traces_included: false
+  raw_reports_included: false
+  real_run_ids_included: false
+  real_provider_ids_included: false
+  local_absolute_paths_included: false
+  credential_material_included: false
+
+excluded_artifact_classes:
+  - ".out contents"
+  - "raw logs"
+  - "raw reports"
+  - "raw traces"
+  - "retained bundles"
+  - "support bundles"
+  - "archives"
+  - "databases"
+  - "environment files"
+  - "key material"
+  - "certificate material"
+  - "tokens"
+  - "secrets"
+  - "API keys"
+  - "bearer material"
+  - "TLS material"
+  - "SPIFFE material"
+  - "Vault material"
+  - "WebAuthn material"
+  - "passkey material"
+  - "raw prompts"
+  - "raw model outputs"

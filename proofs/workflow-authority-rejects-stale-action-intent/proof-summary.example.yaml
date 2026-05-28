@@ -1,0 +1,174 @@
+# Static example only. This file is not live output, not validation output,
+# not a generated artifact, and not product architecture.
+schema_version: "governed-execution-proof-summary.v1"
+scenario_id: "workflow-authority-rejects-stale-action-intent"
+proof_mode: "static_example"
+source_material: "static_example_not_runtime_output"
+id_classification: "synthetic_example"
+validation_status: "not_run"
+validation_evidence: []
+
+action_verb: "cancel-current-attempt"
+action_route: "/api/runs/{run_id}/interventions/cancel-current-attempt"
+authority_source: "cp_workflow_query"
+control_plane_run_id: "example-run-id"
+
+workflow_state_before:
+  authority_available: true
+  status: "running"
+  pending_run_control_action: null
+  note: "synthetic current workflow state for example only"
+
+workflow_state_after_stale_request:
+  authority_available: true
+  status: "running"
+  pending_run_control_action: null
+  stale_request_changed_workflow_state: false
+  note: "stale request rejected before mutation"
+
+workflow_state_after_fresh_request:
+  authority_available: true
+  status: "running"
+  pending_run_control_action: "example-cancel-request-pending-or-applied"
+  note: "optional comparison only; not provider effect or terminal outcome proof"
+
+current_attempt:
+  provider_kind: "fixture_execution_substrate_like"
+  provider_live_validation: false
+  task_id: "example-task-id"
+  attempt: 1
+  provider_run_id: "example-provider-run-id"
+  execution_state: "running"
+  terminal: false
+  capabilities:
+    cancel: true
+  non_claim: "provider fields are synthetic example guards, not live ES evidence"
+
+pending_run_control_action_before: null
+pending_run_control_action_after_stale_request: null
+pending_run_control_action_after_fresh_request:
+  action: "cancel_current_attempt"
+  request_id: "example-fresh-request-id"
+  classification: "guarded_cp_receipt_only"
+
+actions_allowed_before:
+  - "cancel_current_attempt"
+
+stale_actionability_fingerprint: "sha256:stale-example-fingerprint-not-real"
+current_actionability_fingerprint: "sha256:current-example-fingerprint-not-real"
+fingerprint_match: false
+
+stale_request_result:
+  decision: "rejected"
+  effect_status: "none"
+  http_status_example: 409
+  message_class: "refresh_required_after_actionability_mismatch"
+
+stale_request_mutation_performed: false
+
+stale_request_receipt:
+  request_id: "example-stale-request-id"
+  expected_actionability_fingerprint_present: true
+  provider_request: null
+  effect_observation:
+    observation_status: "not_observed"
+  mutation_absence:
+    temporal_update_started: false
+    provider_cancel_called: false
+    attempt_manifest_created: false
+    pending_run_control_action_created: false
+    durable_accepted_intervention_record_created: false
+
+fresh_request_comparison:
+  included: true
+  request_id: "example-fresh-request-id"
+  submitted_fingerprint: "sha256:current-example-fingerprint-not-real"
+  decision: "accepted"
+  classification: "guarded_cp_receipt_only"
+  non_claims:
+    - "not_provider_side_cancel_success"
+    - "not_terminal_runtime_outcome"
+    - "not_live_es_validation"
+
+authoritative_facts:
+  - owner: "Control Plane"
+    facts:
+      - "workflow/query state"
+      - "current actionability fingerprint"
+      - "guarded intervention decision"
+      - "expected-state and current-attempt guards"
+
+evidence_only_facts:
+  - owner: "UI/report/channel/proof outputs"
+    facts:
+      - "stale action intent"
+      - "presentation snapshot"
+      - "static proof example"
+  - owner: "Execution Substrate"
+    facts:
+      - "lifecycle projection"
+      - "outcome evidence"
+      - "cancel evidence"
+      - "retained result references"
+      - "authority_handoff metadata"
+  - owner: "Infrastructure Manager"
+    facts:
+      - "profiles"
+      - "readiness reports"
+      - "doctor output"
+      - "support-bundle diagnostics"
+
+excluded_artifact_classes:
+  - ".out contents"
+  - "raw logs"
+  - "raw reports"
+  - "raw traces"
+  - "retained bundles"
+  - "support bundles"
+  - "archives"
+  - "databases"
+  - "environment files"
+  - "key/cert material"
+  - "TLS/SPIFFE/Vault/WebAuthn/passkey material"
+  - "API keys and bearer material"
+  - "raw prompts"
+  - "raw model outputs"
+  - "workspaces"
+  - "local process records"
+
+claims_supported:
+  - "stale expected_actionability_fingerprint is rejected before mutation"
+  - "CP workflow/query state and current actionability fingerprint decide the guarded action"
+  - "presentation/proof/evidence surfaces are not run-control truth"
+  - "fresh accepted cancel is a CP guarded receipt only"
+
+claims_not_supported:
+  - "production readiness"
+  - "high availability"
+  - "multi-tenancy"
+  - "Remote Alpha readiness"
+  - "live ES execution"
+  - "provider-side cancellation success"
+  - "terminal runtime outcome"
+  - "runtime identity or Vault credential success"
+  - "retained-bundle semantics"
+  - "support-bundle authority"
+  - "WebAuthn/passkey/browser delivery"
+  - "all intervention verbs"
+  - "proof harness architecture"
+
+non_authority_labels:
+  proof_summary: "static_example_only"
+  stale_snapshot: "presentation_or_evidence_only"
+  fresh_receipt: "guarded_cp_receipt_only"
+  es_facts: "evidence_projection_only"
+  im_facts: "provenance_diagnostics_only"
+  generated_outputs: "non_authoritative"
+
+sensitive_exclusion_summary:
+  raw_sensitive_payloads_included: false
+  real_run_ids_included: false
+  real_hashes_included: false
+  real_file_paths_included: false
+  generated_artifact_payloads_included: false
+  credential_material_included: false

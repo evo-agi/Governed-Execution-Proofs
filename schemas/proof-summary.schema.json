@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/governed-execution-proof-summary.schema.json",
+  "title": "Governed Execution Proof Summary",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "scenario_id",
+    "proof_mode",
+    "source_material",
+    "id_classification",
+    "validation_status",
+    "claims_supported",
+    "claims_not_supported",
+    "excluded_artifact_classes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scenario_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "proof_mode": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_material": {
+      "type": "string",
+      "minLength": 1
+    },
+    "id_classification": {
+      "type": "string",
+      "minLength": 1
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": [
+        "not_run"
+      ]
+    },
+    "claims_supported": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "claims_not_supported": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "excluded_artifact_classes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "non_authority_labels": {
+      "type": "object"
+    },
+    "authority_labels": {
+      "type": "array"
+    },
+    "evidence_projection_labels": {
+      "type": "object"
+    },
+    "evidence_projection_facts": {
+      "type": "array"
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "non_authority_labels"
+      ]
+    },
+    {
+      "required": [
+        "authority_labels"
+      ]
+    },
+    {
+      "required": [
+        "evidence_projection_labels"
+      ]
+    },
+    {
+      "required": [
+        "evidence_projection_facts"
+      ]
+    }
+  ],
+  "additionalProperties": true
+}

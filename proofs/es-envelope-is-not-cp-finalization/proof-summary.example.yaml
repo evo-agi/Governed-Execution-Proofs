@@ -1,0 +1,231 @@
+# Static example only. This file is not live output, not validation output,
+# not a generated artifact, and not product architecture.
+schema_version: "governed-execution-proof-summary.v1"
+scenario_id: "es-envelope-is-not-cp-finalization"
+proof_mode: "static_example"
+source_material: "static_example_not_runtime_output"
+id_classification: "synthetic_example"
+validation_status: "not_run"
+validation_evidence: []
+
+scenario_name: "ES Envelope Is Not CP Finalization"
+envelope_id: "example-es-envelope-id-not-real"
+control_plane_run_id: "example-cp-run-id-not-real"
+execution_substrate_run_id: "example-es-run-id-not-real"
+
+surface_sequence:
+  - name: "producer_contract"
+    endpoint: "GET /v1/executions:contract"
+    owner: "Execution Substrate"
+    authority_label: "es_compatibility_declaration"
+    evidence_label: "static_non_secret_producer_metadata"
+    classification: "compatibility_declaration"
+    example_result:
+      schema_version: "execution-substrate.producer-contract/v1"
+      governed_execution_contract: "governed-execution-producer/v1"
+      compatibility_declared: true
+      mandatory_outcome_evidence_declared: true
+    non_authority:
+      - "not_service_health"
+      - "not_submit_readiness"
+      - "not_artifact_admission_proof"
+      - "not_run_authority"
+      - "not_run_existence_proof"
+      - "not_lifecycle_truth"
+      - "not_lifecycle_write_coordination"
+      - "not_credential_truth"
+      - "not_policy_truth"
+      - "not_scheduler_api"
+      - "not_cp_finalization"
+  - name: "prepare"
+    endpoint: "POST /v1/executions:prepare"
+    owner: "Execution Substrate"
+    authority_label: "es_admission_preflight"
+    evidence_label: "preflight_success_example"
+    classification: "preflight_only"
+    example_result:
+      success: true
+      run_id_created: false
+      scheduler_handoff_created: false
+      proto_execution_state_created: false
+      cp_semantic_state_created: false
+    non_authority:
+      - "not_execution"
+      - "not_runtime_success"
+      - "not_cp_review"
+      - "not_cp_checkpoint"
+      - "not_cp_finalization"
+  - name: "submit"
+    endpoint: "POST /v1/executions:submit"
+    owner: "Execution Substrate"
+    authority_label: "es_runtime_handoff"
+    evidence_label: "bounded_submission_receipt_example"
+    classification: "async_runtime_handoff"
+    example_result:
+      success: true
+      submitted: true
+      status: "submitted"
+      run_id: "example-es-run-id-not-real"
+      authority_handoff_present: true
+    non_authority:
+      - "not_durable_es_lifecycle_record"
+      - "not_sync_execution_result"
+      - "not_retry_policy"
+      - "not_scheduler_abstraction"
+      - "not_live_credential_state"
+      - "not_cp_review"
+      - "not_cp_finalization"
+  - name: "status"
+    endpoint: "GET /v1/executions/{run_id}/status"
+    owner: "Execution Substrate"
+    authority_label: "es_runtime_projection"
+    evidence_label: "nomad_backed_status_projection_example"
+    classification: "runtime_evidence_projection"
+    example_result:
+      status: "running"
+      terminal: false
+      lifecycle_projection:
+        source: "nomad"
+        revision: "example-opaque-same-run-revision-not-real"
+      outcome_evidence:
+        source: "nomad"
+        observation: "nomad_task_state_projection"
+        provider_terminal_observed: false
+    non_authority:
+      - "not_cp_workflow_truth"
+      - "not_lifecycle_write_guard"
+      - "not_scheduler_id"
+      - "not_cp_finalization"
+  - name: "result"
+    endpoint: "GET /v1/executions/{run_id}/result"
+    owner: "Execution Substrate"
+    authority_label: "es_retained_output_envelope"
+    evidence_label: "opaque_retained_output_reference_example"
+    classification: "opaque_output_artifact"
+    example_result:
+      media_type: "application/gzip"
+      retained_output_ref: "example-retained-output-ref-not-real"
+      bundle_payload_included: false
+      outcome_evidence:
+        source: "es_retained_result_store"
+        observation: "retained_result_bundle"
+        access_class: "opaque_result_bundle"
+    non_authority:
+      - "not_lifecycle_state_registry"
+      - "not_cp_checkpoint"
+      - "not_cp_review"
+      - "not_cp_finalization"
+      - "not_semantic_interpretation"
+
+cp_semantic_layer:
+  owner: "Control Plane"
+  authority_label: "cp_semantic_review_and_finalization"
+  classification: "semantic_authority_not_proven_here"
+  may_consume:
+    - "es producer compatibility declaration"
+    - "es prepare preflight result"
+    - "es submit receipt"
+    - "es status projection"
+    - "es outcome evidence"
+    - "es retained opaque output envelope"
+  owns:
+    - "workflow state"
+    - "task progression"
+    - "review"
+    - "checkpoint"
+    - "intervention semantics"
+    - "finalization"
+  proof_claimed: false
+
+authority_handoff_example:
+  owner: "Execution Substrate"
+  classification: "non_secret_runtime_handoff_evidence"
+  contains_live_credentials: false
+  proves_workload_obtained_credentials: false
+  proves_cp_finalization: false
+
+authority_labels:
+  - owner: "Execution Substrate"
+    label: "es_envelope_authority"
+    facts:
+      - "producer compatibility declaration"
+      - "prepare preflight"
+      - "submit runtime handoff"
+      - "runtime projection"
+      - "outcome evidence labels"
+      - "opaque retained-output envelope"
+  - owner: "Control Plane"
+    label: "cp_semantic_authority"
+    facts:
+      - "workflow state"
+      - "review"
+      - "checkpoint"
+      - "intervention"
+      - "semantic finalization"
+
+evidence_projection_labels:
+  lifecycle_projection: "runtime_projection_only"
+  outcome_evidence: "runtime_evidence_only"
+  retained_output_ref: "opaque_output_reference_only"
+  authority_handoff: "non_secret_runtime_handoff_evidence_only"
+  proof_summary: "static_example_only"
+  generated_outputs: "excluded_non_authority_class"
+
+claims_supported:
+  - "ES producer contract is a compatibility declaration"
+  - "ES prepare is preflight only"
+  - "ES submit is bounded runtime handoff"
+  - "ES status/result surfaces are runtime evidence or projection"
+  - "ES retained bundles are opaque output artifacts"
+  - "CP owns semantic review and finalization above the ES envelope"
+
+claims_not_supported:
+  - "live ES validation"
+  - "production readiness"
+  - "provider or runtime success"
+  - "CP finalization proof"
+  - "retained-bundle semantic interpretation"
+  - "credential or token brokerage proof"
+  - "Remote Alpha proof"
+  - "service health"
+  - "submit readiness"
+  - "terminal runtime outcome"
+  - "live retained-result availability"
+  - "Vault/SPIRE/Codex credential success"
+
+sensitive_exclusion_summary:
+  raw_sensitive_payloads_included: false
+  generated_artifact_payloads_included: false
+  retained_bundle_payload_included: false
+  support_bundle_payload_included: false
+  raw_logs_included: false
+  raw_traces_included: false
+  raw_reports_included: false
+  real_run_ids_included: false
+  real_provider_ids_included: false
+  real_hashes_included: false
+  real_bundle_refs_included: false
+  local_absolute_paths_included: false
+  credential_material_included: false
+
+excluded_artifact_classes:
+  - ".out contents"
+  - "raw logs"
+  - "raw reports"
+  - "raw traces"
+  - "retained bundles"
+  - "support bundles"
+  - "archives"
+  - "databases"
+  - "environment files"
+  - "key/cert material"
+  - "TLS/SPIFFE/Vault/WebAuthn/passkey material"
+  - "API keys and bearer material"
+  - "JWT-SVIDs and private keys"
+  - "raw prompts"
+  - "raw model outputs"
+  - "raw Codex stdout/stderr/final/meta/review/audit payloads"
+  - "workspaces"
+  - "checkpoints"
+  - "quarantines/restores"
+  - "local process records"

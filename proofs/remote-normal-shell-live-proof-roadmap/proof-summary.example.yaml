@@ -1,0 +1,232 @@
+# Static example only. This file is not live output, not validation output,
+# not a generated artifact, and not product architecture.
+schema_version: "governed-execution-proof-summary.v1"
+scenario_id: "remote-normal-shell-live-proof-roadmap"
+proof_mode: "static_example"
+source_material: "roadmap_contract_not_runtime_output"
+id_classification: "synthetic_example"
+validation_status: "not_run"
+validation_evidence: []
+
+example_run:
+  control_plane_run_id: "example-cp-run-id"
+  task_id: "example-task-id"
+  attempt: 1
+  provider_run_id: "example-provider-run-id"
+  publication_id: "example-ags-publication-id"
+  artifact_digest: "example-artifact-digest-not-real"
+  derivation_spec_digest: "example-derivation-digest-not-real"
+  retained_result_ref: "example-retained-result-ref-not-real"
+  remote_profile_id: "example-remote-profile-id"
+  profile_lineage_id: "example-profile-lineage-id"
+  note: "all identifiers are synthetic examples"
+
+scenario_scope:
+  topology: "remote-supported-host-alpha"
+  control_plane_location: "mac_local_alpha_posture"
+  temporal_location: "mac_local_alpha_posture"
+  remote_runtime_location: "single_remote_linux_host_alpha_posture"
+  runtime_profile: "control-plane-normal-shell/v1"
+  task_attempt_mode: "normal_shell"
+  substrate_adapter: "execution_substrate"
+  shared_filesystem: false
+  transport: "direct_https_mtls_expected_for_future_validation"
+
+planned_flow:
+  - stage: "cp_temporal_shell_started"
+    owner: "Control Plane"
+    authority_label: "cp_authority"
+    validation_status: "not_run"
+  - stage: "producer_contract_gate"
+    owner: "Execution Substrate"
+    authority_label: "es_compatibility_gate"
+    validation_status: "not_run"
+    required_before:
+      - "ags_publish"
+      - "es_prepare"
+      - "es_submit"
+      - "real_attempt_manifest"
+  - stage: "ags_publish"
+    owner: "AGS"
+    authority_label: "ags_publication_facts"
+    validation_status: "not_run"
+  - stage: "es_prepare"
+    owner: "Execution Substrate"
+    authority_label: "es_admission_preflight"
+    validation_status: "not_run"
+  - stage: "es_submit"
+    owner: "Execution Substrate"
+    authority_label: "es_submit_handoff"
+    validation_status: "not_run"
+  - stage: "nomad_docker_execution"
+    owner: "Nomad and Docker"
+    authority_label: "runtime_execution_authority"
+    validation_status: "not_run"
+  - stage: "runtime_identity_vault_handoff"
+    owner: "Execution Substrate, SPIRE, Vault, workload"
+    authority_label: "bounded_runtime_identity_contract"
+    validation_status: "not_run"
+    credential_success_claimed: false
+    es_token_brokerage_claimed: false
+  - stage: "retained_result_fetch"
+    owner: "Execution Substrate"
+    authority_label: "es_retained_opaque_bundle"
+    validation_status: "not_run"
+  - stage: "cp_review_and_finalization"
+    owner: "Control Plane"
+    authority_label: "cp_semantic_finalization"
+    validation_status: "not_run"
+  - stage: "operator_evidence_and_narrative"
+    owner: "Proof package"
+    authority_label: "evidence_summary_only"
+    validation_status: "not_run"
+
+authoritative_facts:
+  - owner: "Control Plane"
+    label: "cp_authority"
+    facts:
+      - "Temporal workflow state"
+      - "task progression"
+      - "review and checkpoint semantics"
+      - "guarded interventions"
+      - "terminal finalization"
+  - owner: "Execution Substrate"
+    label: "es_authority"
+    facts:
+      - "admission"
+      - "prepare preflight"
+      - "submit handoff"
+      - "runtime-profile compatibility"
+      - "Nomad-backed lifecycle projection"
+      - "retained opaque result bundle"
+      - "bounded runtime identity handoff boundary"
+  - owner: "AGS"
+    label: "ags_authority"
+    facts:
+      - "publication response facts"
+  - owner: "Nomad"
+    label: "scheduler_authority"
+    facts:
+      - "placement and task lifecycle"
+  - owner: "Docker"
+    label: "container_runtime_authority"
+    facts:
+      - "container execution mechanics"
+  - owner: "SPIRE"
+    label: "identity_issuer_authority"
+    facts:
+      - "SVID issuance"
+  - owner: "Vault"
+    label: "credential_authority"
+    facts:
+      - "token, secret, and lease issuance after workload-side login"
+
+evidence_projection_facts:
+  - owner: "Infrastructure Manager"
+    label: "provenance_diagnostics_only"
+    facts:
+      - "remote profile"
+      - "doctor stages"
+      - "readiness report"
+      - "support-bundle metadata"
+  - owner: "Execution Substrate"
+    label: "evidence_projection_only"
+    facts:
+      - "lifecycle_projection"
+      - "outcome_evidence"
+      - "authority_handoff"
+      - "logs/result/cancel evidence"
+  - owner: "Control Plane"
+    label: "cp_evidence_summary"
+    facts:
+      - "attempt manifest summary"
+      - "ExecutionFlowSnapshot v1 summary"
+      - "review/finalization summary"
+  - owner: "Proof package"
+    label: "static_example_only"
+    facts:
+      - "machine-readable example"
+      - "human-readable narrative outline"
+
+required_validation_results:
+  remote_profile_contract: "not_run"
+  producer_contract_gate: "not_run"
+  ags_publish: "not_run"
+  es_prepare: "not_run"
+  es_submit: "not_run"
+  nomad_docker_terminal_observation: "not_run"
+  workload_identity_endpoint_observed: "not_run"
+  vault_workload_login_success: "not_run"
+  retained_result_fetch: "not_run"
+  cp_materialization_review_finalization: "not_run"
+  operator_evidence_redaction_review: "not_run"
+
+claims_supported:
+  - "future proof contract is defined"
+  - "authority labels are explicit"
+  - "evidence/projection labels are explicit"
+  - "sensitive/generated artifact exclusions are explicit"
+
+claims_not_supported:
+  - "live Linux validation yet"
+  - "production readiness"
+  - "high availability"
+  - "multi-tenancy"
+  - "general deployment architecture"
+  - "remote provisioning or remote reconciler"
+  - "live governed execution success"
+  - "runtime identity credential success"
+  - "Vault token, lease, secret, or Codex credential success"
+  - "retained result semantic finalization before CP performs it"
+  - "support-bundle authority"
+  - "remote Control Plane deployment"
+  - "default remote normal-shell runtime"
+
+non_authority_labels:
+  proof_summary: "static_example_only"
+  generated_outputs: "non_authoritative"
+  im_outputs: "provenance_diagnostics_only"
+  es_lifecycle_facts: "evidence_projection_only"
+  es_authority_handoff: "non_secret_handoff_evidence_only"
+  retained_bundle: "opaque_es_output_until_cp_semantic_review"
+  support_bundle: "diagnostics_only"
+
+excluded_artifact_classes:
+  - "raw generated artifact contents"
+  - ".out contents"
+  - "raw logs"
+  - "raw traces"
+  - "raw reports"
+  - "raw prompts"
+  - "raw model outputs"
+  - "retained bundles"
+  - "support bundles"
+  - "archives"
+  - "databases"
+  - "environment files"
+  - "key material"
+  - "certificate bodies"
+  - "TLS material"
+  - "SPIFFE material"
+  - "Vault tokens"
+  - "JWT-SVID bodies"
+  - "API keys"
+  - "bearer material"
+  - "WebAuthn or passkey material"
+  - "workspaces"
+  - "checkpoints"
+  - "quarantines"
+  - "restores"
+  - "local process records"
+
+sensitive_exclusion_summary:
+  raw_sensitive_payloads_included: false
+  generated_artifact_payloads_included: false
+  real_run_ids_included: false
+  real_provider_ids_included: false
+  real_hashes_included: false
+  real_bundle_refs_included: false
+  local_absolute_paths_included: false
+  remote_filesystem_paths_included: false
+  credential_material_included: false
+
