@@ -29,6 +29,22 @@ Temporal validation, general supported-local validation, general Remote Alpha
 validation, Linux-host behavior, unbounded parallel proof coverage, or
 production readiness.
 
+## Governed execution lifecycle module
+
+`proofs/governed-execution-lifecycle/` is the first-class module for the
+Codex-reported governed execution lifecycle ledger recorded in
+`.docs/governed-lifecycle-proof-2026-05-28.md` and the filming posture recorded
+in `.docs/governed-lifecycle-filming-script.md`. The module may reference the
+two bounded serial `temporal-basic` run ids and safe metadata status from the
+ledger, but it must not import raw generated artifacts, raw summaries, reports,
+logs, traces, retained payloads, prompts, model outputs, workspaces, databases,
+credentials, endpoint values, or local process records.
+
+The module keeps happy-path-twice as Codex-reported lifecycle evidence, not
+independent audit and not public/demo readiness. Runtime identity/Vault,
+cancel/failure/intervention, and IM support-bundle behavior remain excluded
+unless separate future proofs are explicitly authorized and recorded.
+
 ## Proof module layout
 
 A module may contain:
