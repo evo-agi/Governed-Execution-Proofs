@@ -9,19 +9,23 @@ content.
 | Claim | Authored evidence references | Evidence posture |
 | --- | --- | --- |
 | Two bounded serial governed lifecycle rehearsals completed | `.docs/governed-lifecycle-proof-2026-05-28.md`; `proofs/remote-normal-shell-live-proof-roadmap/validation-plan.md` | Codex-reported lifecycle evidence, not independent audit. |
-| CP Temporal workflow/history evidence exists | `.docs/governed-lifecycle-proof-2026-05-28.md`; `.docs/governed-lifecycle-filming-script.md` | CP-owned workflow/history metadata and filming-safe field list only. |
-| ES prepare/submit/lifecycle/result metadata exists | `.docs/governed-lifecycle-proof-2026-05-28.md`; `.docs/governed-lifecycle-filming-script.md` | ES evidence/projection metadata only. |
-| Retained-result materialization and CP finalization metadata exist | `.docs/governed-lifecycle-proof-2026-05-28.md`; `.docs/governed-lifecycle-filming-script.md` | Metadata refs only; retained bundles do not become semantic finalization. |
+| CP Temporal workflow/history evidence exists | `.docs/governed-lifecycle-proof-2026-05-28.md` | CP-owned workflow/history metadata only. Recording safe-field lists now live in `Governed Execution MVP Filming Preparation/.docs/`. |
+| ES prepare/submit/lifecycle/result metadata exists | `.docs/governed-lifecycle-proof-2026-05-28.md` | ES evidence/projection metadata only. Recording screen plans now live in `Governed Execution MVP Filming Preparation/.docs/`. |
+| Retained-result materialization and CP finalization metadata exist | `.docs/governed-lifecycle-proof-2026-05-28.md` | Metadata refs only; retained bundles do not become semantic finalization. Recording material stays in `Governed Execution MVP Filming Preparation/.docs/`. |
 | Static module shape and example status | `.docs/proof-module-conventions.md` | Authored proof-module convention; example remains `not_run`. |
 | Relationship to the broader remote normal-shell roadmap | `proofs/remote-normal-shell-live-proof-roadmap/validation-plan.md`; `.docs/remote-normal-shell-live-validation-plan.md` | The lifecycle ledger supports the roadmap but does not complete the full roadmap. |
 
 ## Authored docs referenced
 
 - `.docs/governed-lifecycle-proof-2026-05-28.md`
-- `.docs/governed-lifecycle-filming-script.md`
 - `proofs/remote-normal-shell-live-proof-roadmap/validation-plan.md`
 - `.docs/remote-normal-shell-live-validation-plan.md`
 - `.docs/proof-module-conventions.md`
+
+Recording and public-demo material is maintained in
+`Governed Execution MVP Filming Preparation/.docs/`. The proof-repo
+`.docs/governed-lifecycle-filming-script.md` file is a pointer, not proof
+evidence.
 
 ## Authority boundaries
 

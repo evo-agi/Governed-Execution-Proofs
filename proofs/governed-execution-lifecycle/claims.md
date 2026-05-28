@@ -1,10 +1,12 @@
 # Claims
 
 Current evidence status: Codex-reported two-pass governed lifecycle evidence is
-recorded in `.docs/governed-lifecycle-proof-2026-05-28.md`, with filming
-posture in `.docs/governed-lifecycle-filming-script.md`. The static example
-remains `validation_status: "not_run"` because it is a template, not proof
-evidence status. Independent audit and public/demo readiness are not claimed.
+recorded in `.docs/governed-lifecycle-proof-2026-05-28.md`. Canonical recording
+package material now lives in `Governed Execution MVP Filming Preparation/.docs/`;
+`.docs/governed-lifecycle-filming-script.md` is a pointer, not proof evidence.
+The static example remains `validation_status: "not_run"` because it is a
+template, not proof evidence status. Independent audit and public/demo readiness
+are not claimed.
 
 ## Supported claims
 
@@ -81,3 +83,5 @@ Before using this module for audit or public writing, verify:
 - Runtime identity/Vault, support bundle, and cancel/failure/intervention remain
   excluded unless separate future proofs are explicitly authorized and recorded.
 - Raw generated artifacts are not copied into the proof repo.
+- Filming/demo wording stays in the filming-prep repo and must not expand these
+  proof claims.

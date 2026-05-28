@@ -9,7 +9,7 @@ validation_status: "not_run"
 
 evidence_status_references:
   - ".docs/governed-lifecycle-proof-2026-05-28.md"
-  - ".docs/governed-lifecycle-filming-script.md"
+  - "proofs/governed-execution-lifecycle/evidence-map.md"
   - "proofs/remote-normal-shell-live-proof-roadmap/validation-plan.md"
   - ".docs/proof-module-conventions.md"
 
