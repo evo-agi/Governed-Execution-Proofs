@@ -47,7 +47,8 @@ groundwork.
 
 Pass interpretation:
 
-- The proof module has the required six authored files.
+- The proof module has the required authored files; its public-writing map is
+  supplemental authored documentation.
 - The static summary remains `validation_status: "not_run"`.
 - Claims and non-claims are explicit.
 - Authority boundaries stay separated.

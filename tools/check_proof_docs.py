@@ -20,6 +20,9 @@ REQUIRED_MODULE_FILES = {
     "evidence-map.md",
     "proof-summary.example.yaml",
     "validation-plan.md",
+}
+
+OPTIONAL_MODULE_FILES = {
     "public-writing-map.md",
 }
 
@@ -446,8 +449,9 @@ def validate_module(root: Path, module: Path) -> list[str]:
         return diagnostics
 
     names = {entry.name for entry in entries}
+    permitted = REQUIRED_MODULE_FILES | OPTIONAL_MODULE_FILES
     missing = sorted(REQUIRED_MODULE_FILES - names)
-    extra = sorted(names - REQUIRED_MODULE_FILES)
+    extra = sorted(names - permitted)
     for name in missing:
         diagnostics.append(f"{module}: missing required file {name}")
     for name in extra:
@@ -456,7 +460,7 @@ def validate_module(root: Path, module: Path) -> list[str]:
         return diagnostics
 
     texts: dict[str, str] = {}
-    for name in sorted(REQUIRED_MODULE_FILES):
+    for name in sorted(REQUIRED_MODULE_FILES | (OPTIONAL_MODULE_FILES & names)):
         path = module / name
         if not path.is_file():
             continue

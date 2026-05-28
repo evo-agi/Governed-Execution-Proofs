@@ -10,8 +10,10 @@ writing labels consistent without creating a shared proof framework.
 
 Proof modules are isolated folders under `proofs/`. Each module stands on its
 own scenario, claims, evidence, example summary, validation plan, and public
-writing posture. Module content may cite adjacent authored docs, source, and
-tests, but it must not import generated payloads into the repo.
+writing posture. A module may express that public-writing posture in its claims,
+scenario, validation plan, evidence map, or an optional supplemental
+`public-writing-map.md`. Module content may cite adjacent authored docs, source,
+and tests, but it must not import generated payloads into the repo.
 
 ## Proof 0 module
 
@@ -56,6 +58,11 @@ A module may contain:
 
 Those files are authored documentation when present. They are not product
 runtime code, schemas, scripts, tests, or generated proof output.
+
+Legacy or more detailed modules may also include `public-writing-map.md` as
+supplemental authored documentation. It is not required proof-module shape, and
+a module remains valid when its public-writing posture is documented in the
+required authored files.
 
 ## Static/example-first default
 

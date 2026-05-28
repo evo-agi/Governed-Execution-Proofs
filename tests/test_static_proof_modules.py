@@ -23,7 +23,11 @@ def run_tool(script: Path, target: Path | str) -> subprocess.CompletedProcess[st
     )
 
 
-def write_minimal_repo(tmp_path: Path, module_id: str = "example-proof") -> Path:
+def write_minimal_repo(
+    tmp_path: Path,
+    module_id: str = "example-proof",
+    include_public_writing_map: bool = True,
+) -> Path:
     repo = tmp_path / "repo"
     module = repo / "proofs" / module_id
     docs = repo / ".docs"
@@ -107,8 +111,9 @@ Validation status: `not_run`.
 """,
         encoding="utf-8",
     )
-    (module / "public-writing-map.md").write_text(
-        """# Public Writing Map
+    if include_public_writing_map:
+        (module / "public-writing-map.md").write_text(
+            """# Public Writing Map
 
 ## What the proof demonstrates
 
@@ -122,8 +127,8 @@ Validation status: `not_run`.
 
 - The proof is production ready.
 """,
-        encoding="utf-8",
-    )
+            encoding="utf-8",
+        )
     (module / "proof-summary.example.yaml").write_text(
         f"""schema_version: "governed-execution-proof-summary.v1"
 scenario_id: "{module_id}"
@@ -147,6 +152,13 @@ non_authority_labels:
 
 def test_current_proof_modules_pass_checker() -> None:
     result = run_tool(CHECKER, REPO_ROOT)
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_public_writing_map_is_optional(tmp_path: Path) -> None:
+    repo = write_minimal_repo(tmp_path, include_public_writing_map=False)
+
+    result = run_tool(CHECKER, repo)
     assert result.returncode == 0, result.stdout + result.stderr
 
 
